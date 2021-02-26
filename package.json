@@ -22,6 +22,7 @@
   "homepage": "https://github.com/ATJSH/kakao-i-ui-ts#readme",
   "devDependencies": {
     "@types/jest": "^26.0.20",
+    "@types/lodash": "^4.14.168",
     "@types/node": "^14.14.31",
     "jest": "^26.6.3",
     "ts-jest": "^26.5.2",
@@ -44,5 +45,8 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }

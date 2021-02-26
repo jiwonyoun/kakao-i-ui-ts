@@ -1,9 +1,27 @@
-import { KIV2Link } from './link.component'
+import { ChatElement } from './ChatElement.component'
 
-export interface KIV2Thumbnail {
-    imageUrl: string;
-    link?: KIV2Link;
-    fixedRatio?: boolean;
-    width: number;
+export interface ThumbnailElementPropsType {
+    imageUrl: string,
+    fixedRatio?: boolean,
+    width: number,
     height: number
+}
+
+export interface ThumbnailProp {
+    imageUrl: string,
+    fixedRatio?: boolean,
+    width: number,
+    height: number
+}
+
+export function Thumbnail({ imageUrl, fixedRatio = false, width, height }: ThumbnailProp): ChatElement<ThumbnailElementPropsType> {
+    return new ChatElement(
+        'thumbnail',
+        {
+            imageUrl,
+            fixedRatio,
+            width,
+            height
+        }
+    )
 }
