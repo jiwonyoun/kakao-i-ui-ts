@@ -2,7 +2,7 @@ import { ChatElement } from '../CoreChatElement.component';
 import { OutputType } from './Output.component';
 import { QuickReplyType } from './QuickReply.component';
 
-export interface SkillTemplateElementPropsType {
+interface SkillTemplateElementPropsType {
   outputs: OutputType[];
   quickReplies?: QuickReplyType[];
 }

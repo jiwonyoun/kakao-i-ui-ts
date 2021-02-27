@@ -3,7 +3,7 @@ import { BasicCardType } from './BasicCard.component';
 import { CommerceCardType } from './CommerceCard.component';
 import { CarouselHeaderType } from './CarouselHeader.component';
 
-export interface CarouselElementPropsType {
+interface CarouselElementPropsType {
   type: string;
   items: BasicCardType[] | CommerceCardType[];
   header: CarouselHeaderType;

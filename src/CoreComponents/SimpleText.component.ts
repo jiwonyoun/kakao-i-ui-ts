@@ -1,6 +1,6 @@
 import { ChatElement } from '../CoreChatElement.component';
 
-export interface SimpleTextElementPropsType {
+interface SimpleTextElementPropsType {
   text: string;
 }
 

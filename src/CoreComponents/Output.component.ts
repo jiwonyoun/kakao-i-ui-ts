@@ -5,7 +5,7 @@ import { CommerceCardType } from './CommerceCard.component';
 import { SimpleImageType } from './SimpleImage.component';
 import { SimpleTextType } from './SimpleText.component';
 
-export interface OutputElementPropsType {
+interface OutputElementPropsType {
   [chatElementName: string]: BasicCardType;
 }
 

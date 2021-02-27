@@ -1,6 +1,6 @@
 import { ChatElement } from '../CoreChatElement.component';
 
-export interface SimpleImageElementPropsType {
+interface SimpleImageElementPropsType {
   imageUrl: string;
   altText: string;
 }

@@ -1,6 +1,6 @@
 import { ChatElement } from '../CoreChatElement.component';
 
-export interface ThumbnailElementPropsType {
+interface ThumbnailElementPropsType {
   imageUrl: string;
   fixedRatio?: boolean;
   width: number;

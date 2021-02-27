@@ -2,7 +2,7 @@ import { ChatElement } from '../CoreChatElement.component';
 import { ThumbnailType } from './Thumbnail.component';
 import { ButtonType } from './Button.component';
 
-export interface BasicCardElementPropsType {
+interface BasicCardElementPropsType {
   title?: string;
   description?: string;
   thumbnail: ThumbnailType;

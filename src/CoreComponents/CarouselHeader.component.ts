@@ -1,6 +1,6 @@
 import { ChatElement } from '../CoreChatElement.component';
 
-export interface CarouselHeaderElementPropsType {
+interface CarouselHeaderElementPropsType {
   title: string;
   description: string;
   thumbnail: {

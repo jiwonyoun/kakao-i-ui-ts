@@ -1,6 +1,6 @@
 import { ChatElement } from '../CoreChatElement.component';
 
-export interface ButtonElementPropsType {
+interface ButtonElementPropsType {
   label: string;
   action: string;
   webLinkUrl?: string;

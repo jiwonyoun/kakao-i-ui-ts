@@ -1,6 +1,6 @@
 import { ChatElement } from '../CoreChatElement.component';
 
-export interface QuickReplyElementPropsType {
+interface QuickReplyElementPropsType {
   label: string;
   action: string;
   messageText: string;

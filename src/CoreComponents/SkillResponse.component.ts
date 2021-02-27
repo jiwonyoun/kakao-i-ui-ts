@@ -1,7 +1,7 @@
 import { ChatElement } from '../CoreChatElement.component';
 import { SkillTemplateType } from './SkillTemplate.component';
 
-export interface SkillResponseElementPropsType {
+interface SkillResponseElementPropsType {
   version: string;
   template: SkillTemplateType;
 }

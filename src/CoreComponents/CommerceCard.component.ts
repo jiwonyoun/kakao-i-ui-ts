@@ -2,7 +2,7 @@ import { ChatElement } from '../CoreChatElement.component';
 import { ThumbnailType } from './Thumbnail.component';
 import { ButtonType } from './Button.component';
 
-export interface CommerceCardElementPropsType {
+interface CommerceCardElementPropsType {
   description: string;
   price: number;
   currency: string;
