@@ -48,7 +48,7 @@ describe("SkillResponse 컴포넌트 테스트", () => {
       ],
       quickReplies: [],
     }),
-  } as CoreComponent.SkillResponseParameter);
+  });
 
   const kakaoiSkillResponseJSON1 = {
     version: '2.0',

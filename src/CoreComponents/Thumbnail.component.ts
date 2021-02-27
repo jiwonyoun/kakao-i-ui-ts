@@ -22,5 +22,5 @@ export function Thumbnail({ imageUrl, fixedRatio = false, width, height }: Thumb
     fixedRatio,
     width,
     height,
-  } as ThumbnailElementPropsType);
+  });
 }

@@ -45,5 +45,5 @@ export function CommerceCard({
     discountedPrice,
     thumbnails,
     buttons,
-  } as CommerceCardElementPropsType);
+  });
 }

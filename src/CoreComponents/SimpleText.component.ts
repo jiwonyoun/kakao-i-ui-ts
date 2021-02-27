@@ -13,5 +13,5 @@ export interface SimpleTextParameter {
 export function SimpleText({ text }: SimpleTextParameter): SimpleTextType {
   return new ChatElement('simpleText', {
     text,
-  } as SimpleTextElementPropsType);
+  });
 }

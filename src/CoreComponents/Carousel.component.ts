@@ -32,5 +32,5 @@ export function Carousel({
     type: cardType,
     items,
     header,
-  } as CarouselElementPropsType);
+  });
 }

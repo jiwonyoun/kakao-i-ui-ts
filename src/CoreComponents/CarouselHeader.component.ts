@@ -23,5 +23,5 @@ export function CarouselHeader({ title, description, imageUrl }: CarouselHeaderP
     thumbnail: {
       imageUrl,
     },
-  } as CarouselHeaderElementPropsType);
+  });
 }

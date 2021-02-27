@@ -6,7 +6,7 @@ import { SimpleImageType } from './SimpleImage.component';
 import { SimpleTextType } from './SimpleText.component';
 
 interface OutputElementPropsType {
-  [chatElementName: string]: BasicCardType;
+  [chatElementName: string]: BasicCardType | CommerceCardType | CarouselType | SimpleTextType | SimpleImageType;
 }
 
 export type OutputType = ChatElement<OutputElementPropsType>;
@@ -18,5 +18,5 @@ export interface OutputParameter {
 export function Output({ content }: OutputParameter): OutputType {
   return new ChatElement('output', {
     [content.name]: content,
-  } as OutputElementPropsType);
+  });
 }

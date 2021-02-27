@@ -25,5 +25,5 @@ export function QuickReply({ label, action, messageText, blockId, extra }: Quick
     messageText,
     blockId,
     extra,
-  } as QuickReplyElementPropsType);
+  });
 }

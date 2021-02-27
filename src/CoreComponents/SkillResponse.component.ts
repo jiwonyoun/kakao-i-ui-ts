@@ -13,9 +13,9 @@ export interface SkillResponseParameter {
   skillTemplate: SkillTemplateType;
 }
 
-export function SkillResponse({ version, skillTemplate }: SkillResponseParameter) {
+export function SkillResponse({ version, skillTemplate }: SkillResponseParameter): SkillResponseType {
   return new ChatElement('skillResponse', {
     version: version ? version : '2.0',
     template: skillTemplate,
-  } as SkillResponseElementPropsType);
+  });
 }

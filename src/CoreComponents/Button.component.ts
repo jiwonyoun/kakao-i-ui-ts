@@ -39,5 +39,5 @@ export function Button({
     blockId,
     phoneNumber,
     extra,
-  } as ButtonElementPropsType);
+  });
 }

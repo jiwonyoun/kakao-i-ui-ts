@@ -16,5 +16,5 @@ export function SimpleImage({ imageUrl, altText }: SimpleImageParameter): Simple
   return new ChatElement('simpleImage', {
     imageUrl,
     altText,
-  } as SimpleImageElementPropsType);
+  });
 }
