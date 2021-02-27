@@ -1,4 +1,4 @@
-import _ from "lodash";
+import _ from 'lodash';
 
 type JSONPrimitive = string | number | boolean | null;
 type JSONValue = JSONPrimitive | JSONObject | JSONArray;
@@ -24,9 +24,7 @@ export class ChatElement<ElementPropsType = object> {
 export type PropValue = ChatElement | ChatElement[] | number | string | number | boolean | JSONObject;
 
 /** chatElement의 props를 사용하여 챗봇 응답에 사용 가능한 순수 JSON 데이터를 생성함 */
-export function renderChatElement(
-  chatElement: ChatElement
-): Record<string, any> {
+export function renderChatElement(chatElement: ChatElement): Record<string, any> {
   return _.mapValues(chatElement.props, (propValue: PropValue) => {
     if (Array.isArray(propValue)) {
       return propValue.map((propListValue) => {

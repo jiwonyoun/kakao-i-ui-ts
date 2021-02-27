@@ -1,6 +1,6 @@
-import { ChatElement } from "../CoreChatElement.component";
-import { ThumbnailType } from "./Thumbnail.component";
-import { ButtonType } from "./Button.component";
+import { ChatElement } from '../CoreChatElement.component';
+import { ThumbnailType } from './Thumbnail.component';
+import { ButtonType } from './Button.component';
 
 export interface BasicCardElementPropsType {
   title?: string;
@@ -24,11 +24,10 @@ export function BasicCard({
   thumbnail,
   buttons,
 }: BasicCardParameter): ChatElement<BasicCardElementPropsType> {
-  return new ChatElement("basicCard", {
+  return new ChatElement('basicCard', {
     title,
     description,
     thumbnail,
     buttons,
   } as BasicCardElementPropsType);
 }
-

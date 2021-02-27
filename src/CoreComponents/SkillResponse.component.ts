@@ -1,5 +1,5 @@
-import { ChatElement } from "../CoreChatElement.component";
-import { SkillTemplateType } from "./SkillTemplate.component";
+import { ChatElement } from '../CoreChatElement.component';
+import { SkillTemplateType } from './SkillTemplate.component';
 
 export interface SkillResponseElementPropsType {
   version: string;
@@ -13,11 +13,8 @@ export interface SkillResponseParameter {
   skillTemplate: SkillTemplateType;
 }
 
-export function SkillResponse({
-  version = "2.0",
-  skillTemplate,
-}: SkillResponseParameter) {
-  return new ChatElement("skillResponse", {
+export function SkillResponse({ version = '2.0', skillTemplate }: SkillResponseParameter) {
+  return new ChatElement('skillResponse', {
     version,
     template: skillTemplate,
   } as SkillResponseElementPropsType);

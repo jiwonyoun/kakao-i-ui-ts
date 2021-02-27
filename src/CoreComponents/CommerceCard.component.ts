@@ -1,6 +1,6 @@
-import { ChatElement } from "../CoreChatElement.component";
-import { ThumbnailType } from "./Thumbnail.component";
-import { ButtonType } from "./Button.component";
+import { ChatElement } from '../CoreChatElement.component';
+import { ThumbnailType } from './Thumbnail.component';
+import { ButtonType } from './Button.component';
 
 export interface CommerceCardElementPropsType {
   description: string;
@@ -36,7 +36,7 @@ export function CommerceCard({
   thumbnails,
   buttons,
 }: CommerceCardParameter): CommerceCardType {
-  return new ChatElement("commerceCard", {
+  return new ChatElement('commerceCard', {
     description,
     price,
     currency,

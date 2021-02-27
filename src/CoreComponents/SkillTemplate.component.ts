@@ -1,6 +1,6 @@
-import { ChatElement } from "../CoreChatElement.component";
-import { OutputType } from "./Output.component";
-import { QuickReplyType } from "./QuickReply.component";
+import { ChatElement } from '../CoreChatElement.component';
+import { OutputType } from './Output.component';
+import { QuickReplyType } from './QuickReply.component';
 
 export interface SkillTemplateElementPropsType {
   outputs: OutputType[];
@@ -14,11 +14,8 @@ export interface SkillTemplateParameter {
   quickReplies?: QuickReplyType[];
 }
 
-export function SkillTemplate({
-  outputs,
-  quickReplies,
-}: SkillTemplateParameter): SkillTemplateType {
-  return new ChatElement("template", {
+export function SkillTemplate({ outputs, quickReplies }: SkillTemplateParameter): SkillTemplateType {
+  return new ChatElement('template', {
     outputs,
     quickReplies,
   } as SkillTemplateElementPropsType);

@@ -1,4 +1,4 @@
-import { ChatElement } from "../CoreChatElement.component";
+import { ChatElement } from '../CoreChatElement.component';
 
 export interface CarouselHeaderElementPropsType {
   title: string;
@@ -16,12 +16,8 @@ export interface CarouselHeaderParameter {
   imageUrl: string;
 }
 
-export function CarouselHeader({
-  title,
-  description,
-  imageUrl,
-}: CarouselHeaderParameter): CarouselHeaderType {
-  return new ChatElement("carouselHeader", {
+export function CarouselHeader({ title, description, imageUrl }: CarouselHeaderParameter): CarouselHeaderType {
+  return new ChatElement('carouselHeader', {
     title,
     description,
     thumbnail: {

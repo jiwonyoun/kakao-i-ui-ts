@@ -1,4 +1,4 @@
-import { ChatElement } from "../CoreChatElement.component";
+import { ChatElement } from '../CoreChatElement.component';
 
 export interface ThumbnailElementPropsType {
   imageUrl: string;
@@ -16,13 +16,8 @@ export interface ThumbnailParameter {
   height: number;
 }
 
-export function Thumbnail({
-  imageUrl,
-  fixedRatio = false,
-  width,
-  height,
-}: ThumbnailParameter): ThumbnailType {
-  return new ChatElement("thumbnail", {
+export function Thumbnail({ imageUrl, fixedRatio = false, width, height }: ThumbnailParameter): ThumbnailType {
+  return new ChatElement('thumbnail', {
     imageUrl,
     fixedRatio,
     width,
