@@ -13,6 +13,8 @@ export type SkillResponseType = ChatElement<SkillResponseElementPropsType>;
 //   skillTemplate: SkillTemplateType;
 // }
 
+
+
 export function SkillResponse({ version, skillTemplate }): SkillResponseType {
   return new ChatElement('skillResponse', {
     version: version ? version : '2.0',
