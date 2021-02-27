@@ -6,7 +6,7 @@ import { CarouselHeaderType } from './CarouselHeader.component';
 interface CarouselElementPropsType {
   type: string;
   items: BasicCardType[] | CommerceCardType[];
-  header: CarouselHeaderType;
+  header?: CarouselHeaderType;
 }
 export type CarouselType = ChatElement<CarouselElementPropsType>;
 
@@ -19,7 +19,7 @@ export interface CarouselParameter {
   };
   cardType: 'basicCard' | 'commerceCard';
   items: BasicCardType[] | CommerceCardType[];
-  header: CarouselHeaderType;
+  header?: CarouselHeaderType;
 }
 
 export function Carousel({
