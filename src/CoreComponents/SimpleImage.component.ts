@@ -5,7 +5,7 @@ export interface SimpleImageElementPropsType {
   altText: string;
 }
 
-export type SimpleImageElement = ChatElement<SimpleImageElementPropsType>;
+export type SimpleImageType = ChatElement<SimpleImageElementPropsType>;
 
 export interface SimpleImageParameter {
   imageUrl: string;
@@ -15,7 +15,7 @@ export interface SimpleImageParameter {
 export function SimpleImage({
   imageUrl,
   altText,
-}: SimpleImageParameter): SimpleImageElement {
+}: SimpleImageParameter): SimpleImageType {
   return new ChatElement("simpleImage", <SimpleImageElementPropsType>{
     imageUrl,
     altText,

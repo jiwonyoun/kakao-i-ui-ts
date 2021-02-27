@@ -1,6 +1,6 @@
 import { ChatElement } from "../CoreChatElement.component";
-import { ThumbnailElement } from "./Thumbnail.component";
-import { ButtonElement } from "./Button.component";
+import { ThumbnailType } from "./Thumbnail.component";
+import { ButtonType } from "./Button.component";
 
 export interface CommerceCardElementPropsType {
   description: string;
@@ -9,11 +9,11 @@ export interface CommerceCardElementPropsType {
   discount?: number;
   discountRate?: number;
   discountedPrice?: number;
-  thumbnails: ThumbnailElement[];
-  buttons: ButtonElement[];
+  thumbnails: ThumbnailType[];
+  buttons: ButtonType[];
 }
 
-export type CommerceCardElement = ChatElement<CommerceCardElementPropsType>;
+export type CommerceCardType = ChatElement<CommerceCardElementPropsType>;
 
 export interface CommerceCardParameter {
   description: string;
@@ -22,8 +22,8 @@ export interface CommerceCardParameter {
   discount?: number;
   discountRate?: number;
   discountedPrice?: number;
-  thumbnails: ThumbnailElement[];
-  buttons: ButtonElement[];
+  thumbnails: ThumbnailType[];
+  buttons: ButtonType[];
 }
 
 export function CommerceCard({
@@ -35,7 +35,7 @@ export function CommerceCard({
   discountedPrice,
   thumbnails,
   buttons,
-}: CommerceCardParameter): CommerceCardElement {
+}: CommerceCardParameter): CommerceCardType {
   return new ChatElement("commerceCard", <CommerceCardElementPropsType>{
     description,
     price,

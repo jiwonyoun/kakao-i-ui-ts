@@ -1,27 +1,58 @@
-export { BasicCard, BasicCardElement } from "./Components/BasicCard.component";
-export { Button, ButtonElement } from "./Components/Button.component";
-export { Carousel, CarouselElement } from "./Components/Carousel.component";
+export {
+  Button,
+  ButtonType,
+  ButtonParameter,
+} from "./CoreComponents/Button.component";
+export {
+  BasicCard,
+  BasicCardType,
+  BasicCardParameter,
+} from "./CoreComponents/BasicCard.component";
+export {
+  Carousel,
+  CarouselType,
+  CarouselParameter,
+} from "./CoreComponents/Carousel.component";
 export {
   CarouselHeader,
-  CarouselHeaderElement,
-} from "./Components/CarouselHeader.component";
+  CarouselHeaderType,
+  CarouselHeaderParameter,
+} from "./CoreComponents/CarouselHeader.component";
 export {
   CommerceCard,
-  CommerceCardElement,
-} from "./Components/CommerceCard.component";
-export { Content, ContentElement } from "./Components/Content.component";
+  CommerceCardType,
+  CommerceCardParameter,
+} from "./CoreComponents/CommerceCard.component";
+export {
+  Output,
+  OutputType,
+  OutputParameter,
+} from "./CoreComponents/Output.component";
 export {
   QuickReply,
-  QuickReplyElement,
-} from "./Components/QuickReply.component";
+  QuickReplyType,
+  QuickReplyParameter,
+} from "./CoreComponents/QuickReply.component";
 export {
   SimpleImage,
-  SimpleImageElement,
-} from "./Components/SimpleImage.component";
+  SimpleImageType,
+  SimpleImageParameter,
+} from "./CoreComponents/SimpleImage.component";
 export {
   SimpleText,
-  SimpleTextElement,
-} from "./Components/SimpleText.component";
-export { Template, TemplateElement } from "./Components/Template.component";
-export { Thumbnail, ThumbnailElement } from "./Components/Thumbnail.component";
+  SimpleTextType,
+  SimpleTextParameter,
+} from "./CoreComponents/SimpleText.component";
+export {
+  SkillTemplate,
+  SkillTemplateType,
+  SkillTemplateParameter,
+} from "./CoreComponents/SkillTemplate.component";
+export { Thumbnail, ThumbnailType } from "./CoreComponents/Thumbnail.component";
+export {
+  SkillResponse,
+  SkillResponseType,
+  SkillResponseParameter,
+} from "./CoreComponents/SkillResponse.component";
+
 export { ChatElement, renderChatElement } from "./CoreChatElement.component";

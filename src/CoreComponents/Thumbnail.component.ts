@@ -7,7 +7,7 @@ export interface ThumbnailElementPropsType {
   height: number;
 }
 
-export type ThumbnailElement = ChatElement<ThumbnailElementPropsType>;
+export type ThumbnailType = ChatElement<ThumbnailElementPropsType>;
 
 export interface ThumbnailParameter {
   imageUrl: string;
@@ -21,7 +21,7 @@ export function Thumbnail({
   fixedRatio = false,
   width,
   height,
-}: ThumbnailParameter): ThumbnailElement {
+}: ThumbnailParameter): ThumbnailType {
   return new ChatElement("thumbnail", <ThumbnailElementPropsType>{
     imageUrl,
     fixedRatio,

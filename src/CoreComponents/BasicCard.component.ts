@@ -1,19 +1,19 @@
 import { ChatElement } from "../CoreChatElement.component";
-import { ThumbnailElement } from "./Thumbnail.component";
-import { ButtonElement } from "./Button.component";
+import { ThumbnailType } from "./Thumbnail.component";
+import { ButtonType } from "./Button.component";
 
 export interface BasicCardElementPropsType {
   title?: string;
   description?: string;
-  thumbnail: ThumbnailElement;
-  buttons?: ButtonElement[];
+  thumbnail: ThumbnailType;
+  buttons?: ButtonType[];
 }
 
 export interface BasicCardParameter {
   title?: string;
   description?: string;
-  thumbnail: ThumbnailElement;
-  buttons?: ButtonElement[];
+  thumbnail: ThumbnailType;
+  buttons?: ButtonType[];
 }
 
 export function BasicCard({
@@ -30,4 +30,4 @@ export function BasicCard({
   });
 }
 
-export type BasicCardElement = ChatElement<BasicCardElementPropsType>;
+export type BasicCardType = ChatElement<BasicCardElementPropsType>;

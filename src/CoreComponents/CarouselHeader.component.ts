@@ -8,7 +8,7 @@ export interface CarouselHeaderElementPropsType {
   };
 }
 
-export type CarouselHeaderElement = ChatElement<CarouselHeaderElementPropsType>;
+export type CarouselHeaderType = ChatElement<CarouselHeaderElementPropsType>;
 
 export interface CarouselHeaderParameter {
   title: string;
@@ -20,7 +20,7 @@ export function CarouselHeader({
   title,
   description,
   imageUrl,
-}: CarouselHeaderParameter): CarouselHeaderElement {
+}: CarouselHeaderParameter): CarouselHeaderType {
   return new ChatElement("carouselHeader", <CarouselHeaderElementPropsType>{
     title,
     description,

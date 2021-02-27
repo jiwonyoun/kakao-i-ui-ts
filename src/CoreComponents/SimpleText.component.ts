@@ -4,13 +4,13 @@ export interface SimpleTextElementPropsType {
   text: string;
 }
 
-export type SimpleTextElement = ChatElement<SimpleTextElementPropsType>;
+export type SimpleTextType = ChatElement<SimpleTextElementPropsType>;
 
 export interface SimpleTextParameter {
   text: string;
 }
 
-export function SimpleText({ text }: SimpleTextParameter): SimpleTextElement {
+export function SimpleText({ text }: SimpleTextParameter): SimpleTextType {
   return new ChatElement("simpleText", <SimpleTextElementPropsType>{
     text,
   });

@@ -1,14 +1,14 @@
 import { ChatElement } from "../CoreChatElement.component";
-import { BasicCardElement } from "./BasicCard.component";
-import { CommerceCardElement } from "./CommerceCard.component";
-import { CarouselHeaderElement } from "./CarouselHeader.component";
+import { BasicCardType } from "./BasicCard.component";
+import { CommerceCardType } from "./CommerceCard.component";
+import { CarouselHeaderType } from "./CarouselHeader.component";
 
 export interface CarouselElementPropsType {
   type: string;
-  items: BasicCardElement[] | CommerceCardElement[];
-  header: CarouselHeaderElement;
+  items: BasicCardType[] | CommerceCardType[];
+  header: CarouselHeaderType;
 }
-export type CarouselElement = ChatElement<CarouselElementPropsType>;
+export type CarouselType = ChatElement<CarouselElementPropsType>;
 
 export interface CarouselParameter {
   pagination: {
@@ -18,8 +18,8 @@ export interface CarouselParameter {
     has_previous_page_items: boolean;
   };
   cardType: "basicCard" | "commerceCard";
-  items: BasicCardElement[] | CommerceCardElement[];
-  header: CarouselHeaderElement;
+  items: BasicCardType[] | CommerceCardType[];
+  header: CarouselHeaderType;
 }
 
 export function Carousel({
@@ -32,7 +32,7 @@ export function Carousel({
   cardType,
   items,
   header,
-}: CarouselParameter): CarouselElement {
+}: CarouselParameter): CarouselType {
   return new ChatElement("carousel", <CarouselElementPropsType>{
     type: cardType,
     items,

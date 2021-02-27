@@ -3,7 +3,7 @@ import _ from "lodash";
 type JSONPrimitive = string | number | boolean | null;
 type JSONValue = JSONPrimitive | JSONObject | JSONArray;
 type JSONObject = { [member: string]: JSONValue };
-interface JSONArray extends Array<JSONValue> { }
+interface JSONArray extends Array<JSONValue> {}
 
 /**
  * Kakao i 오픈빌더 챗봇 응답 데이터를 만들 때 사용할 수 있는, 응답 데이터의 요소.

@@ -10,7 +10,7 @@ export interface ButtonElementPropsType {
   extra?: Record<string, any>;
 }
 
-export type ButtonElement = ChatElement<ButtonElementPropsType>;
+export type ButtonType = ChatElement<ButtonElementPropsType>;
 
 export interface ButtonParameter {
   label: string;
@@ -30,7 +30,7 @@ export function Button({
   blockId,
   phoneNumber,
   extra,
-}: ButtonParameter): ButtonElement {
+}: ButtonParameter): ButtonType {
   return new ChatElement("button", <ButtonElementPropsType>{
     label,
     action,

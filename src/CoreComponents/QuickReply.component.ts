@@ -8,7 +8,7 @@ export interface QuickReplyElementPropsType {
   extra?: Record<string, any>;
 }
 
-export type QuickReplyElement = ChatElement<QuickReplyElementPropsType>;
+export type QuickReplyType = ChatElement<QuickReplyElementPropsType>;
 
 export interface QuickReplyParameter {
   label: string;
@@ -24,7 +24,7 @@ export function QuickReply({
   messageText,
   blockId,
   extra,
-}: QuickReplyParameter): QuickReplyElement {
+}: QuickReplyParameter): QuickReplyType {
   return new ChatElement("quickReply", <QuickReplyElementPropsType>{
     label,
     action,
