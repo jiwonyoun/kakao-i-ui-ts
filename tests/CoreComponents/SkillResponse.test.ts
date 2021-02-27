@@ -182,7 +182,7 @@ describe('코어 컴포넌트 테스트', () => {
       });
     }
 
-    const OrderInfoOutput = Output({
+    const orderInfoOutput = Output({
       content: Carousel({
         pagination: {
           current_page_no: 1,
@@ -195,7 +195,7 @@ describe('코어 컴포넌트 테스트', () => {
       })
     })
 
-    expect(renderChatElement(OrderInfoOutput)).toEqual({
+    expect(renderChatElement(orderInfoOutput)).toEqual({
       "carousel": {
         "type": "basicCard",
         "items": [
