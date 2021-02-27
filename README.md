@@ -74,6 +74,96 @@ const mySkillResponse = CoreComponent.SkillResponse({
 console.log(renderChatElement(mySkillResponse))
 ```
 
+```typescript
+import { CoreComponent, renderChatElement } from 'kakao-i-ui-ts';
+
+interface OrderedProduct {
+    product_no: number;
+    product_name: string;
+    price: number;
+    image: string;
+}
+
+interface Order {
+    order_id: number;
+    op_name: string;
+    products: OrderedProduct[];
+}
+
+const orders: Order[] = [
+    {
+    order_id: 1,
+    op_name: '김철수',
+    products: [
+        {
+        product_no: 1,
+        product_name: 'Line Note',
+        price: 3900,
+        image:
+            'https://s3.ap-northeast-2.amazonaws.com/elasticbeanstalk-ap-northeast-2-176213403491/media/magazine_img/magazine_286/84-썸네일.jpg',
+        },
+        {
+        product_no: 2,
+        product_name: 'AX Pencil',
+        price: 990,
+        image: 'https://icatcare.org/app/uploads/2018/06/Layer-1704-1200x630.jpg',
+        },
+    ],
+    },
+    {
+    order_id: 2,
+    op_name: '김철수',
+    products: [
+        {
+        product_no: 32,
+        product_name: 'TRFan',
+        price: 19000,
+        image:
+            'https://ichef.bbci.co.uk/news/1024/cpsprodpb/68DF/production/_109474862_angrycat-index-getty3-3.jpg',
+        },
+        {
+        product_no: 35,
+        product_name: 'Q Table',
+        price: 999000,
+        image:
+            'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=675.0&fit=crop',
+        },
+    ],
+    },
+];
+
+
+function OrderInfoCard(order: Order): BasicCardType {
+    const getDescription = (orderedProducts: OrderedProduct[]) => orderedProducts.map((orderedProduct) => orderedProduct.product_name).join(', ');
+
+    return CoreComponent.BasicCard({
+    description: getDescription(order.products),
+    thumbnail: Thumbnail({
+        imageUrl: order.products[0].image,
+        fixedRatio: true,
+        width: 600,
+        height: 600,
+    }),
+    buttons: [],
+    });
+}
+
+const orderInfoOutput = Output({
+    content: Carousel({
+    pagination: {
+        current_page_no: 1,
+        pagination_page_size: 10,
+        has_next_page_items: false,
+        has_previous_page_items: false
+    },
+    cardType: 'basicCard',
+    items: orders.map((order) => OrderInfoCard(order) ),
+    })
+})
+
+console.log(renderChatElement(0rderInfoOutput))
+```
+
 ## 관련 프로젝트
 - https://github.com/winz87/kakao-chatbot-templates - 본 프로젝트 개발에 해당 프로젝트의 여러 개념을 차용하였음
 - https://github.com/facebook/react - 본 프로젝트 개발에 해당 프로젝트의 여러 개념을 차용하였음
