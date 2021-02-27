@@ -1,9 +1,7 @@
 import * as CoreComponent from "../../src";
 
 describe("SkillResponse 컴포넌트 테스트", () => {
-  const SkillResponseComponentInstance_1 = CoreComponent.SkillResponse(<
-    CoreComponent.SkillResponseParameter
-  >{
+  const SkillResponseComponentInstance_1 = CoreComponent.SkillResponse({
     skillTemplate: CoreComponent.SkillTemplate({
       outputs: [
         CoreComponent.Output({
@@ -50,7 +48,7 @@ describe("SkillResponse 컴포넌트 테스트", () => {
       ],
       quickReplies: [],
     }),
-  });
+  } as CoreComponent.SkillResponseParameter);
 
   const KakaoiSkillResponseJSON_1 = {
     version: "2.0",

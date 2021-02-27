@@ -1,4 +1,4 @@
-import { ChatElement } from "../CoreChatElement.component";
+import { ChatElement } from '../CoreChatElement.component';
 
 export interface SimpleTextElementPropsType {
   text: string;
@@ -11,7 +11,7 @@ export interface SimpleTextParameter {
 }
 
 export function SimpleText({ text }: SimpleTextParameter): SimpleTextType {
-  return new ChatElement("simpleText", <SimpleTextElementPropsType>{
+  return new ChatElement('simpleText', {
     text,
-  });
+  } as SimpleTextElementPropsType);
 }

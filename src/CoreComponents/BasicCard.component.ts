@@ -9,6 +9,8 @@ export interface BasicCardElementPropsType {
   buttons?: ButtonType[];
 }
 
+export type BasicCardType = ChatElement<BasicCardElementPropsType>;
+
 export interface BasicCardParameter {
   title?: string;
   description?: string;
@@ -22,12 +24,11 @@ export function BasicCard({
   thumbnail,
   buttons,
 }: BasicCardParameter): ChatElement<BasicCardElementPropsType> {
-  return new ChatElement("basicCard", <BasicCardElementPropsType>{
+  return new ChatElement("basicCard", {
     title,
     description,
     thumbnail,
     buttons,
-  });
+  } as BasicCardElementPropsType);
 }
 
-export type BasicCardType = ChatElement<BasicCardElementPropsType>;

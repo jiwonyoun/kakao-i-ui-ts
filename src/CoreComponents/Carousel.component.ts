@@ -33,9 +33,9 @@ export function Carousel({
   items,
   header,
 }: CarouselParameter): CarouselType {
-  return new ChatElement("carousel", <CarouselElementPropsType>{
+  return new ChatElement("carousel", {
     type: cardType,
     items,
     header,
-  });
+  } as CarouselElementPropsType);
 }

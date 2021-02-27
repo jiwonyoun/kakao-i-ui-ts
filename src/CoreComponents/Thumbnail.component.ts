@@ -22,10 +22,10 @@ export function Thumbnail({
   width,
   height,
 }: ThumbnailParameter): ThumbnailType {
-  return new ChatElement("thumbnail", <ThumbnailElementPropsType>{
+  return new ChatElement("thumbnail", {
     imageUrl,
     fixedRatio,
     width,
     height,
-  });
+  } as ThumbnailElementPropsType);
 }

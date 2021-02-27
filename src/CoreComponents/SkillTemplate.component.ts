@@ -18,8 +18,8 @@ export function SkillTemplate({
   outputs,
   quickReplies,
 }: SkillTemplateParameter): SkillTemplateType {
-  return new ChatElement("template", <SkillTemplateElementPropsType>{
+  return new ChatElement("template", {
     outputs,
-    quickReplies: quickReplies,
-  });
+    quickReplies,
+  } as SkillTemplateElementPropsType);
 }

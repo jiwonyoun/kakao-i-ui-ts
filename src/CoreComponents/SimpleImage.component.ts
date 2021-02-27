@@ -1,4 +1,4 @@
-import { ChatElement } from "../CoreChatElement.component";
+import { ChatElement } from '../CoreChatElement.component';
 
 export interface SimpleImageElementPropsType {
   imageUrl: string;
@@ -12,12 +12,9 @@ export interface SimpleImageParameter {
   altText: string;
 }
 
-export function SimpleImage({
-  imageUrl,
-  altText,
-}: SimpleImageParameter): SimpleImageType {
-  return new ChatElement("simpleImage", <SimpleImageElementPropsType>{
+export function SimpleImage({ imageUrl, altText }: SimpleImageParameter): SimpleImageType {
+  return new ChatElement('simpleImage', {
     imageUrl,
     altText,
-  });
+  } as SimpleImageElementPropsType);
 }

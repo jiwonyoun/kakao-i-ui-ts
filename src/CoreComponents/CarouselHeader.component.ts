@@ -21,11 +21,11 @@ export function CarouselHeader({
   description,
   imageUrl,
 }: CarouselHeaderParameter): CarouselHeaderType {
-  return new ChatElement("carouselHeader", <CarouselHeaderElementPropsType>{
+  return new ChatElement("carouselHeader", {
     title,
     description,
     thumbnail: {
       imageUrl,
     },
-  });
+  } as CarouselHeaderElementPropsType);
 }

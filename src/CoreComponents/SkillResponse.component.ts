@@ -17,8 +17,8 @@ export function SkillResponse({
   version = "2.0",
   skillTemplate,
 }: SkillResponseParameter) {
-  return new ChatElement("skillResponse", <SkillResponseElementPropsType>{
+  return new ChatElement("skillResponse", {
     version,
     template: skillTemplate,
-  });
+  } as SkillResponseElementPropsType);
 }

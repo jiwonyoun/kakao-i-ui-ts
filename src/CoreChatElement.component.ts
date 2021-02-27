@@ -21,14 +21,7 @@ export class ChatElement<ElementPropsType = object> {
 /**
  * Map 형식인 ChatElement.props의 Value에 할당 가능한 타입들.
  */
-export type PropValue =
-  | ChatElement
-  | Array<ChatElement>
-  | number
-  | string
-  | number
-  | boolean
-  | JSONObject;
+export type PropValue = ChatElement | ChatElement[] | number | string | number | boolean | JSONObject;
 
 /** chatElement의 props를 사용하여 챗봇 응답에 사용 가능한 순수 JSON 데이터를 생성함 */
 export function renderChatElement(

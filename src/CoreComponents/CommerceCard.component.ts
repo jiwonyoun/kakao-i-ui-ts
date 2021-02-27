@@ -36,7 +36,7 @@ export function CommerceCard({
   thumbnails,
   buttons,
 }: CommerceCardParameter): CommerceCardType {
-  return new ChatElement("commerceCard", <CommerceCardElementPropsType>{
+  return new ChatElement("commerceCard", {
     description,
     price,
     currency,
@@ -45,5 +45,5 @@ export function CommerceCard({
     discountedPrice,
     thumbnails,
     buttons,
-  });
+  } as CommerceCardElementPropsType);
 }

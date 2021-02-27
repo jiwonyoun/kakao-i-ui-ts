@@ -1,4 +1,4 @@
-import { ChatElement } from "../CoreChatElement.component";
+import { ChatElement } from '../CoreChatElement.component';
 
 export interface ButtonElementPropsType {
   label: string;
@@ -14,7 +14,7 @@ export type ButtonType = ChatElement<ButtonElementPropsType>;
 
 export interface ButtonParameter {
   label: string;
-  action: "webLink" | "message" | "block" | "phone";
+  action: 'webLink' | 'message' | 'block' | 'phone';
   webLinkUrl?: string;
   messageText?: string;
   blockId?: string;
@@ -31,7 +31,7 @@ export function Button({
   phoneNumber,
   extra,
 }: ButtonParameter): ButtonType {
-  return new ChatElement("button", <ButtonElementPropsType>{
+  return new ChatElement('button', {
     label,
     action,
     webLinkUrl,
@@ -39,5 +39,5 @@ export function Button({
     blockId,
     phoneNumber,
     extra,
-  });
+  } as ButtonElementPropsType);
 }
