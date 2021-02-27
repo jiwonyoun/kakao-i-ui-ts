@@ -1,7 +1,7 @@
 import { CoreComponent, renderChatElement } from '../../src';
 
 describe("SkillResponse 컴포넌트 테스트", () => {
-  const skillResponseComponentInstance_1 = CoreComponent.SkillResponse({
+  const skillResponseComponentInstance1 = CoreComponent.SkillResponse({
     skillTemplate: CoreComponent.SkillTemplate({
       outputs: [
         CoreComponent.Output({
@@ -50,7 +50,7 @@ describe("SkillResponse 컴포넌트 테스트", () => {
     }),
   } as CoreComponent.SkillResponseParameter);
 
-  const kakaoiSkillResponseJSON_1 = {
+  const kakaoiSkillResponseJSON1 = {
     version: '2.0',
     template: {
       outputs: [
@@ -100,12 +100,12 @@ describe("SkillResponse 컴포넌트 테스트", () => {
     },
   };
 
-  const renderedSKillResponseComponentInstance_1 = renderChatElement(skillResponseComponentInstance_1);
+  const renderedSKillResponseComponentInstance1 = renderChatElement(skillResponseComponentInstance1);
 
   it("RenderedSKillResponseComponentInstance_1 === KakaoiSkillResponseJSON_1", () => {
-    expect(renderedSKillResponseComponentInstance_1).toEqual(kakaoiSkillResponseJSON_1);
+    expect(renderedSKillResponseComponentInstance1).toEqual(kakaoiSkillResponseJSON1);
     if (true) {
-      console.log(JSON.stringify(renderedSKillResponseComponentInstance_1, null, 2));
+      console.log(JSON.stringify(renderedSKillResponseComponentInstance1, null, 2));
     }
   });
 });
