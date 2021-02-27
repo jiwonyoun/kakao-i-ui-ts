@@ -9,13 +9,13 @@ interface SkillResponseElementPropsType {
 export type SkillResponseType = ChatElement<SkillResponseElementPropsType>;
 
 export interface SkillResponseParameter {
-  version: string;
+  version?: string;
   skillTemplate: SkillTemplateType;
 }
 
-export function SkillResponse({ version = '2.0', skillTemplate }: SkillResponseParameter) {
+export function SkillResponse({ version, skillTemplate }: SkillResponseParameter) {
   return new ChatElement('skillResponse', {
-    version,
+    version: version ? version : '2.0',
     template: skillTemplate,
   } as SkillResponseElementPropsType);
 }
