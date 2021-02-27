@@ -1,4 +1,4 @@
-import * as CoreComponent from "../../src";
+import { CoreComponent, renderChatElement } from '../../src';
 
 describe("SkillResponse 컴포넌트 테스트", () => {
   const SkillResponseComponentInstance_1 = CoreComponent.SkillResponse({
@@ -100,9 +100,7 @@ describe("SkillResponse 컴포넌트 테스트", () => {
     },
   };
 
-  const RenderedSKillResponseComponentInstance_1 = CoreComponent.renderChatElement(
-    SkillResponseComponentInstance_1
-  );
+  const RenderedSKillResponseComponentInstance_1 = renderChatElement(SkillResponseComponentInstance_1);
 
   it("RenderedSKillResponseComponentInstance_1 === KakaoiSkillResponseJSON_1", () => {
     expect(RenderedSKillResponseComponentInstance_1).toEqual(

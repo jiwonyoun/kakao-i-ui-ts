@@ -25,7 +25,7 @@ npm test
 ## 예제
 ```typescript
 
-import CoreComponent, renderChatElement from 'kakao-i-ui-ts';
+import { CoreComponent, renderChatElement } from 'kakao-i-ui-ts';
 
 const mySkillResponse = CoreComponent.SkillResponse({
     skillTemplate: CoreComponent.SkillTemplate({
