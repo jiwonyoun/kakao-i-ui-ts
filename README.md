@@ -1,6 +1,6 @@
 # kakao-i-ui-ts
 
-Kakao i UI TS는 Typescript를 통해 손쉽게 Kakao i 오픈빌더 챗봇 응답을 만들 수 있도록 도와주는 라이브러리이다.
+Kakao i UI TS ("Kits")는 Typescript를 통해 손쉽게 Kakao i 오픈빌더 챗봇 응답을 만들 수 있도록 도와주는 라이브러리이다.
 
 - [Kakao i 오픈빌더 챗봇의 JSON 응답 엘리먼트](https://i.kakao.com/docs/skill-response-format)들을 Typescript 코드를 통해 챗봇 응답을 쉽게 구현할 수 있다.
 - 위 Kakao i 오픈빌더 엘리먼트들을 선언형 UI 패턴을 통해 컴포넌트를 서로 조합하여, 순수 JSON으로 렌더링할 수 있다.
