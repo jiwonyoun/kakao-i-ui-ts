@@ -3,7 +3,7 @@ import _ from 'lodash';
 type JSONPrimitive = string | number | boolean | null;
 type JSONValue = JSONPrimitive | JSONObject | JSONArray;
 type JSONObject = { [member: string]: JSONValue };
-interface JSONArray extends Array<JSONValue> { }
+interface JSONArray extends Array<JSONValue> {}
 
 /**
  * Kakao i 오픈빌더 챗봇 응답 데이터를 만들 때 사용할 수 있는, 응답 데이터의 요소.
@@ -15,7 +15,7 @@ interface JSONArray extends Array<JSONValue> { }
  * 해당 ChatElement 클래스는 React 라이브러리 (https://github.com/facebook/react)의 'ReactElement' 구현 구조 일부를 참고하여 작성하였음.
  */
 export class ChatElement<ElementPropsType = object> {
-  constructor(public name: string, public props: ElementPropsType) { }
+  constructor(public name: string, public props: ElementPropsType) {}
 }
 
 /**
@@ -56,7 +56,6 @@ function renderUnknownObject(unknownObject: any): Record<string, any> {
       return renderUnknownObject(unknownObjectValue);
     });
   }
-
 
   return unknownObject;
 }
