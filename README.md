@@ -22,7 +22,8 @@ npm test
 ## 예제
 
 ```typescript
-import { CoreComponent, renderChatElement } from 'kakao-i-ui-ts';
+import { renderChatElement } from 'chat-element-json-ts';
+import { CoreComponent } from 'kakao-i-ui-ts';
 
 const mySkillResponse = CoreComponent.SkillResponse({
   skillTemplate: CoreComponent.SkillTemplate({
@@ -78,7 +79,8 @@ console.log(renderChatElement(mySkillResponse));
 ```
 
 ```typescript
-import { CoreComponent, renderChatElement } from 'kakao-i-ui-ts';
+import { renderChatElement } from 'chat-element-json-ts';
+import { CoreComponent } from 'kakao-i-ui-ts';
 
 interface OrderedProduct {
   product_no: number;
