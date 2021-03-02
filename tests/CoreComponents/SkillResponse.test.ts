@@ -1,5 +1,4 @@
 import { CoreComponent, renderChatElement } from '../../src';
-import { BasicCardType, Carousel, CommerceCardType, Output, OutputType, Thumbnail } from '../../src/CoreComponents';
 
 describe('코어 컴포넌트 테스트', () => {
   it('렌더링한 컴포넌트가 Kakao i 오픈빌더 챗봇 응답 사양과 동일함', () => {
@@ -167,12 +166,13 @@ describe('코어 컴포넌트 테스트', () => {
     ];
     
     
-    function OrderInfoCard(order: Order): BasicCardType {
-      const getDescription = (orderedProducts: OrderedProduct[]) => orderedProducts.map((orderedProduct) => orderedProduct.product_name).join(', ');
+    function OrderInfoCard(order: Order): CoreComponent.BasicCardType {
+      const getDescription = (orderedProducts: OrderedProduct[]) =>
+        orderedProducts.map((orderedProduct) => orderedProduct.product_name).join(', ');
 
       return CoreComponent.BasicCard({
         description: getDescription(order.products),
-        thumbnail: Thumbnail({
+        thumbnail: CoreComponent.Thumbnail({
           imageUrl: order.products[0].image,
           fixedRatio: true,
           width: 600,
@@ -182,18 +182,18 @@ describe('코어 컴포넌트 테스트', () => {
       });
     }
 
-    const orderInfoOutput = Output({
-      content: Carousel({
+    const orderInfoOutput = CoreComponent.Output({
+      content: CoreComponent.Carousel({
         pagination: {
           current_page_no: 1,
           pagination_page_size: 10,
           has_next_page_items: false,
-          has_previous_page_items: false
+          has_previous_page_items: false,
         },
         cardType: 'basicCard',
-        items: orders.map((order) => OrderInfoCard(order) ),
-      })
-    })
+        items: orders.map((order) => OrderInfoCard(order)),
+      }),
+    });
 
     expect(renderChatElement(orderInfoOutput)).toEqual({
       "carousel": {
@@ -222,5 +222,76 @@ describe('코어 컴포넌트 테스트', () => {
         ],
       }
     })
+  });
+
+
+  it('Button.extra 안 ChatElement 인스턴스 렌더링', () => {
+    const sampleBasicCard = CoreComponent.BasicCard({
+      title: 'myBasicCard',
+      description: 'MyDescription',
+      thumbnail: CoreComponent.Thumbnail({
+        imageUrl: 'www.github.com',
+        fixedRatio: true,
+        width: 300,
+        height: 300,
+      }),
+      buttons: [
+        CoreComponent.Button({
+          label: 'Click me to spawn yourBasicCard',
+          action: 'block',
+          extra: {
+            block_info_container: {
+              block_info: {
+                basicCard: CoreComponent.BasicCard({
+                  title: 'yourBasicCard',
+                  description: 'yourDescription',
+                  thumbnail: CoreComponent.Thumbnail({
+                    imageUrl: 'www.github.com',
+                    fixedRatio: true,
+                    width: 300,
+                    height: 300,
+                  }),
+                  buttons: [],
+                }),
+              },
+            },
+          },
+        }),
+      ],
+    });
+
+    expect(renderChatElement(sampleBasicCard)).toEqual({
+      title: 'myBasicCard',
+      description: 'MyDescription',
+      thumbnail: {
+        imageUrl: 'www.github.com',
+        fixedRatio: true,
+        width: 300,
+        height: 300,
+      },
+      buttons: [
+        {
+          label: 'Click me to spawn yourBasicCard',
+          action: 'block',
+          extra: {
+            block_info_container: {
+              block_info: {
+                basicCard: {
+                  title: 'yourBasicCard',
+                  description: 'yourDescription',
+                  thumbnail: {
+                    imageUrl: 'www.github.com',
+                    fixedRatio: true,
+                    width: 300,
+                    height: 300,
+                  },
+                  buttons: [],
+                },
+              },
+            },
+          },
+        },
+      ],
+    });
   });
 });
