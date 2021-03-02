@@ -1,4 +1,4 @@
-import { ChatElement } from '../CoreChatElement.component';
+import { ChatElement } from 'chat-element-json-ts';
 import { ThumbnailType } from './Thumbnail.component';
 import { ButtonType } from './Button.component';
 

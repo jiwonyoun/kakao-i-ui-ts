@@ -1,4 +1,4 @@
-import { ChatElement } from '../CoreChatElement.component';
+import { ChatElement } from 'chat-element-json-ts';
 import { BasicCardType } from './BasicCard.component';
 import { CarouselType } from './Carousel.component';
 import { CommerceCardType } from './CommerceCard.component';

@@ -1,4 +1,4 @@
-import { ChatElement } from '../CoreChatElement.component';
+import { ChatElement } from 'chat-element-json-ts';
 import { SkillTemplateType } from './SkillTemplate.component';
 
 interface SkillResponseElementPropsType {

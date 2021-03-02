@@ -58,6 +58,7 @@
     "testEnvironment": "node"
   },
   "dependencies": {
+    "chat-element-json-ts": "0.0.2",
     "lodash": "^4.17.21"
   }
 }

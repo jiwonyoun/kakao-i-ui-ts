@@ -1,4 +1,4 @@
-import { ChatElement } from '../CoreChatElement.component';
+import { ChatElement } from 'chat-element-json-ts';
 import { OutputType } from './Output.component';
 import { QuickReplyType } from './QuickReply.component';
 
