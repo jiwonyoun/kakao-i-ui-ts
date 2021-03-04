@@ -1,4 +1,4 @@
-# kakao-i-ui-ts · <img src="https://img.shields.io/npm/v/kakao-i-ui-ts?color=%230080ff" />
+# kakao-i-ui-ts · <a href="http://npmjs.com/package/kakao-i-ui-ts"><img src="https://img.shields.io/npm/v/kakao-i-ui-ts?color=%230080ff" /></a>
 
 Kakao i UI TS ("Kits")는 Typescript를 통해 손쉽게 Kakao i 오픈빌더 챗봇 응답을 만들 수 있도록 도와주는 라이브러리이다.
 
