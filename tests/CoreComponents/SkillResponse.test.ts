@@ -2,7 +2,7 @@ import { CoreComponent, renderChatElement } from '../../src';
 
 describe('코어 컴포넌트 테스트', () => {
   it('렌더링한 컴포넌트가 Kakao i 오픈빌더 챗봇 응답 사양과 동일함', () => {
-    const skillResponseComponentInstance1 = CoreComponent.SkillResponse({
+    const mySkillResponse = CoreComponent.SkillResponse({
       skillTemplate: CoreComponent.SkillTemplate({
         outputs: [
           CoreComponent.Output({
@@ -51,7 +51,7 @@ describe('코어 컴포넌트 테스트', () => {
       }),
     });
 
-    const kakaoiSkillResponseJSON1 = {
+    const sampleSkillResponse = {
       version: '2.0',
       template: {
         outputs: [
@@ -101,14 +101,10 @@ describe('코어 컴포넌트 테스트', () => {
       },
     };
 
-    const renderedSKillResponseComponentInstance1 = renderChatElement(skillResponseComponentInstance1);
+    
 
-    expect(renderedSKillResponseComponentInstance1).toEqual(kakaoiSkillResponseJSON1);
-    if (true) {
-      console.log(JSON.stringify(renderedSKillResponseComponentInstance1, null, 2));
-    }
+    expect(mySkillResponse.render()).toStrictEqual(sampleSkillResponse);
   });
-
   it('Array.map을 통해 BasicCard 컴포넌트 인스턴스들을 생성함', () => {
     interface OrderedProduct {
       product_no: number;
@@ -195,7 +191,7 @@ describe('코어 컴포넌트 테스트', () => {
       }),
     });
 
-    expect(renderChatElement(orderInfoOutput)).toEqual({
+    expect(orderInfoOutput.render()).toEqual({
       "carousel": {
         "type": "basicCard",
         "items": [
@@ -260,7 +256,7 @@ describe('코어 컴포넌트 테스트', () => {
       ],
     });
 
-    expect(renderChatElement(sampleBasicCard)).toEqual({
+    expect(sampleBasicCard.render()).toEqual({
       title: 'myBasicCard',
       description: 'MyDescription',
       thumbnail: {
