@@ -1,4 +1,4 @@
-import { CoreComponent, renderChatElement } from '../../src';
+import { CoreComponent } from '../../src';
 
 describe('코어 컴포넌트 테스트', () => {
   it('렌더링한 컴포넌트가 Kakao i 오픈빌더 챗봇 응답 사양과 동일함', () => {
