@@ -180,12 +180,6 @@ describe('코어 컴포넌트 테스트', () => {
 
     const orderInfoOutput = CoreComponent.Output({
       content: CoreComponent.Carousel({
-        pagination: {
-          currentPageNo: 1,
-          paginationPageSize: 10,
-          hasNextPageItems: false,
-          hasPreviousPageItems: false,
-        },
         cardType: 'basicCard',
         items: orders.map((order) => OrderInfoCard(order)),
       }),

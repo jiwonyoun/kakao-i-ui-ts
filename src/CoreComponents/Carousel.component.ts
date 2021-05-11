@@ -11,23 +11,12 @@ interface CarouselElementPropsType {
 export type CarouselType = ChatElement<CarouselElementPropsType>;
 
 export interface CarouselParameter {
-  pagination: {
-    currentPageNo: number;
-    paginationPageSize: number;
-    hasNextPageItems: boolean;
-    hasPreviousPageItems: boolean;
-  };
   cardType: 'basicCard' | 'commerceCard';
   items: BasicCardType[] | CommerceCardType[];
   header?: CarouselHeaderType;
 }
 
-export function Carousel({
-  pagination: { currentPageNo, paginationPageSize, hasNextPageItems, hasPreviousPageItems },
-  cardType,
-  items,
-  header,
-}: CarouselParameter): CarouselType {
+export function Carousel({ cardType, items, header }: CarouselParameter): CarouselType {
   return new ChatElement('carousel', {
     type: cardType,
     items,
