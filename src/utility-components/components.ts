@@ -28,7 +28,7 @@ export function ChatResponse({ chats, quickReplies }: ChatResponseProps): SkillR
       outputs: chats.map((chat: Content) => {
         return Output({ content: chat });
       }),
-      quickReplies: quickReplies,
+      quickReplies,
     }),
   });
 }
@@ -43,13 +43,13 @@ export function CarouselFactory(items: CarouselItemsType, carouselHeader?: Carou
   if (items.length === 0) {
     return Carousel({
       cardType: BasicCardElementName,
-      items: items,
+      items,
       header: carouselHeader,
     });
   }
   return Carousel({
     cardType: items[0].name,
-    items: items,
+    items,
     header: carouselHeader,
   });
 }
