@@ -35,7 +35,7 @@ export function ChatResponse({ chats, quickReplies }: ChatResponseProps): SkillR
 
 /**
  * Carousel을 생성해주는 헬퍼 함수. CarouselItemsType을 인자로 받아 Carousel 객체를 알아서 생성함.
- * @param items 캐로셀에 들어갈 요소들 
+ * @param items 캐로셀에 들어갈 요소들
  * @param carouselHeader CarouselHeader
  * @returns
  */

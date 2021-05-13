@@ -14,7 +14,6 @@ interface CarouselElementPropsType {
 }
 export type CarouselType = ChatElement<typeof CarouselElementName, CarouselElementPropsType>;
 
-
 export interface CarouselParameter {
   cardType: CarouseCardType;
   items: CarouselItemsType;
