@@ -58,6 +58,6 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "chat-element-json-ts": "^2.0.1"
+    "chat-element-json-ts": "^3.0.0"
   }
 }

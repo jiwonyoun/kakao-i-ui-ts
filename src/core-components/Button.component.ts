@@ -1,4 +1,5 @@
 import { ChatElement } from 'chat-element-json-ts';
+import { ButtonComponentName } from './constants';
 
 interface ButtonElementPropsType {
   label: string;
@@ -10,7 +11,7 @@ interface ButtonElementPropsType {
   extra?: Record<string, any>;
 }
 
-export type ButtonType = ChatElement<ButtonElementPropsType>;
+export type ButtonType = ChatElement<typeof ButtonComponentName, ButtonElementPropsType>;
 
 export interface ButtonParameter {
   label: string;
@@ -31,7 +32,7 @@ export function Button({
   phoneNumber,
   extra,
 }: ButtonParameter): ButtonType {
-  return new ChatElement('button', {
+  return new ChatElement(ButtonComponentName, {
     label,
     action,
     webLinkUrl,

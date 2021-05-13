@@ -1,11 +1,12 @@
 import { ChatElement } from 'chat-element-json-ts';
+import { SimpleImageComponentName } from './constants';
 
 interface SimpleImageElementPropsType {
   imageUrl: string;
   altText: string;
 }
 
-export type SimpleImageType = ChatElement<SimpleImageElementPropsType>;
+export type SimpleImageType = ChatElement<typeof SimpleImageComponentName, SimpleImageElementPropsType>;
 
 export interface SimpleImageParameter {
   imageUrl: string;
@@ -13,7 +14,7 @@ export interface SimpleImageParameter {
 }
 
 export function SimpleImage({ imageUrl, altText }: SimpleImageParameter): SimpleImageType {
-  return new ChatElement('simpleImage', {
+  return new ChatElement(SimpleImageComponentName, {
     imageUrl,
     altText,
   });

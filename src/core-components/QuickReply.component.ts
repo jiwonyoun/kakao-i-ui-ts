@@ -1,4 +1,5 @@
 import { ChatElement } from 'chat-element-json-ts';
+import { QuickReplyComponentName } from './constants';
 
 interface QuickReplyElementPropsType {
   label: string;
@@ -8,7 +9,7 @@ interface QuickReplyElementPropsType {
   extra?: Record<string, any>;
 }
 
-export type QuickReplyType = ChatElement<QuickReplyElementPropsType>;
+export type QuickReplyType = ChatElement<typeof QuickReplyComponentName, QuickReplyElementPropsType>;
 
 export interface QuickReplyParameter {
   label: string;
@@ -19,7 +20,7 @@ export interface QuickReplyParameter {
 }
 
 export function QuickReply({ label, action, messageText, blockId, extra }: QuickReplyParameter): QuickReplyType {
-  return new ChatElement('quickReply', {
+  return new ChatElement(QuickReplyComponentName, {
     label,
     action,
     messageText,
