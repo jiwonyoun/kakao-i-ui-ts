@@ -19,7 +19,7 @@ npm test
 ```
 
 ## 예제
-<a href="./tests/CoreComponents/SkillResponse.test.ts">SkillResponse.test.ts</a>에 테스트용 코드가 정의되어 있다.
+<a href="./tests">/test 디렉토리</a>에 테스트용 코드가 정의되어 있다.
 
 ## 관련 프로젝트
 
