@@ -1,5 +1,5 @@
 import { ChatElement } from 'chat-element-json-ts';
-import { SkillTemplateComponentName } from './constants';
+import { SkillTemplateElementName } from './constants';
 import { OutputType } from './Output.component';
 import { QuickReplyType } from './QuickReply.component';
 
@@ -8,7 +8,7 @@ interface SkillTemplateElementPropsType {
   quickReplies?: QuickReplyType[];
 }
 
-export type SkillTemplateType = ChatElement<typeof SkillTemplateComponentName, SkillTemplateElementPropsType>;
+export type SkillTemplateType = ChatElement<typeof SkillTemplateElementName, SkillTemplateElementPropsType>;
 
 export interface SkillTemplateParameter {
   outputs: OutputType[];
@@ -16,7 +16,7 @@ export interface SkillTemplateParameter {
 }
 
 export function SkillTemplate({ outputs, quickReplies }: SkillTemplateParameter): SkillTemplateType {
-  return new ChatElement(SkillTemplateComponentName, {
+  return new ChatElement(SkillTemplateElementName, {
     outputs,
     quickReplies,
   });

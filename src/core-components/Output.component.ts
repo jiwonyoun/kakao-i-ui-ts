@@ -2,7 +2,7 @@ import { ChatElement } from 'chat-element-json-ts';
 import { BasicCardType } from './BasicCard.component';
 import { CarouselType } from './Carousel.component';
 import { CommerceCardType } from './CommerceCard.component';
-import { OutputComponentName } from './constants';
+import { OutputElementName } from './constants';
 import { SimpleImageType } from './SimpleImage.component';
 import { SimpleTextType } from './SimpleText.component';
 
@@ -12,14 +12,14 @@ interface OutputElementPropsType {
   [chatElementName: string]: Content;
 }
 
-export type OutputType = ChatElement<typeof OutputComponentName, OutputElementPropsType>;
+export type OutputType = ChatElement<typeof OutputElementName, OutputElementPropsType>;
 
 export interface OutputParameter {
   content: Content;
 }
 
 export function Output({ content }: OutputParameter): OutputType {
-  return new ChatElement(OutputComponentName, {
+  return new ChatElement(OutputElementName, {
     [content.name]: content,
   });
 }

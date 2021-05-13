@@ -1,5 +1,5 @@
 import { ChatElement } from 'chat-element-json-ts';
-import { ThumbnailComponentName } from './constants';
+import { ThumbnailElementName } from './constants';
 
 interface ThumbnailElementPropsType {
   imageUrl: string;
@@ -8,7 +8,7 @@ interface ThumbnailElementPropsType {
   height: number;
 }
 
-export type ThumbnailType = ChatElement<typeof ThumbnailComponentName, ThumbnailElementPropsType>;
+export type ThumbnailType = ChatElement<typeof ThumbnailElementName, ThumbnailElementPropsType>;
 
 export interface ThumbnailParameter {
   imageUrl: string;
@@ -18,7 +18,7 @@ export interface ThumbnailParameter {
 }
 
 export function Thumbnail({ imageUrl, fixedRatio = false, width, height }: ThumbnailParameter): ThumbnailType {
-  return new ChatElement(ThumbnailComponentName, {
+  return new ChatElement(ThumbnailElementName, {
     imageUrl,
     fixedRatio,
     width,

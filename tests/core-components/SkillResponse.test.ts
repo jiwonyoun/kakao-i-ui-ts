@@ -101,8 +101,6 @@ describe('코어 컴포넌트 테스트', () => {
       },
     };
 
-    
-
     expect(mySkillResponse.render()).toStrictEqual(sampleSkillResponse);
   });
   it('Array.map을 통해 BasicCard 컴포넌트 인스턴스들을 생성함', () => {
@@ -160,8 +158,7 @@ describe('코어 컴포넌트 테스트', () => {
         ],
       },
     ];
-    
-    
+
     function OrderInfoCard(order: Order): CoreComponent.BasicCardType {
       const getDescription = (orderedProducts: OrderedProduct[]) =>
         orderedProducts.map((orderedProduct) => orderedProduct.product_name).join(', ');
@@ -186,34 +183,35 @@ describe('코어 컴포넌트 테스트', () => {
     });
 
     expect(orderInfoOutput.render()).toEqual({
-      "carousel": {
-        "type": "basicCard",
-        "items": [
+      carousel: {
+        type: 'basicCard',
+        items: [
           {
-            "description": "Line Note, AX Pencil",
-            "thumbnail": {
-              "imageUrl": "https://s3.ap-northeast-2.amazonaws.com/elasticbeanstalk-ap-northeast-2-176213403491/media/magazine_img/magazine_286/84-썸네일.jpg",
-              "fixedRatio": true,
-              "width": 600,
-              "height": 600
+            description: 'Line Note, AX Pencil',
+            thumbnail: {
+              imageUrl:
+                'https://s3.ap-northeast-2.amazonaws.com/elasticbeanstalk-ap-northeast-2-176213403491/media/magazine_img/magazine_286/84-썸네일.jpg',
+              fixedRatio: true,
+              width: 600,
+              height: 600,
             },
-            "buttons": []
+            buttons: [],
           },
           {
-            "description": "TRFan, Q Table",
-            "thumbnail": {
-              "imageUrl": "https://ichef.bbci.co.uk/news/1024/cpsprodpb/68DF/production/_109474862_angrycat-index-getty3-3.jpg",
-              "fixedRatio": true,
-              "width": 600,
-              "height": 600
+            description: 'TRFan, Q Table',
+            thumbnail: {
+              imageUrl:
+                'https://ichef.bbci.co.uk/news/1024/cpsprodpb/68DF/production/_109474862_angrycat-index-getty3-3.jpg',
+              fixedRatio: true,
+              width: 600,
+              height: 600,
             },
-            "buttons": []
-          }
+            buttons: [],
+          },
         ],
-      }
-    })
+      },
+    });
   });
-
 
   it('Button.extra 안 ChatElement 인스턴스 렌더링', () => {
     const sampleBasicCard = CoreComponent.BasicCard({

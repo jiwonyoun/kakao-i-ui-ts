@@ -1,7 +1,7 @@
 import { ChatElement } from 'chat-element-json-ts';
 import { ThumbnailType } from './Thumbnail.component';
 import { ButtonType } from './Button.component';
-import { CommerceCardComponentName } from './constants';
+import { CommerceCardElementName } from './constants';
 
 interface CommerceCardElementPropsType {
   description: string;
@@ -14,7 +14,7 @@ interface CommerceCardElementPropsType {
   buttons: ButtonType[];
 }
 
-export type CommerceCardType = ChatElement<typeof CommerceCardComponentName, CommerceCardElementPropsType>;
+export type CommerceCardType = ChatElement<typeof CommerceCardElementName, CommerceCardElementPropsType>;
 
 export interface CommerceCardParameter {
   description: string;
@@ -37,7 +37,7 @@ export function CommerceCard({
   thumbnails,
   buttons,
 }: CommerceCardParameter): CommerceCardType {
-  return new ChatElement(CommerceCardComponentName, {
+  return new ChatElement(CommerceCardElementName, {
     description,
     price,
     currency,

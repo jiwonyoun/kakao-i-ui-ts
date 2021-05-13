@@ -1,7 +1,7 @@
 import { ChatElement } from 'chat-element-json-ts';
 import { ThumbnailType } from './Thumbnail.component';
 import { ButtonType } from './Button.component';
-import { BasicCardComponentName } from './constants';
+import { BasicCardElementName } from './constants';
 
 interface BasicCardElementPropsType {
   title?: string;
@@ -10,7 +10,7 @@ interface BasicCardElementPropsType {
   buttons?: ButtonType[];
 }
 
-export type BasicCardType = ChatElement<typeof BasicCardComponentName, BasicCardElementPropsType>;
+export type BasicCardType = ChatElement<typeof BasicCardElementName, BasicCardElementPropsType>;
 
 export interface BasicCardParameter {
   title?: string;
@@ -20,7 +20,7 @@ export interface BasicCardParameter {
 }
 
 export function BasicCard({ title, description, thumbnail, buttons }: BasicCardParameter): BasicCardType {
-  return new ChatElement(BasicCardComponentName, {
+  return new ChatElement(BasicCardElementName, {
     title,
     description,
     thumbnail,

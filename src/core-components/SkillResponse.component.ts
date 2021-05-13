@@ -1,5 +1,5 @@
 import { ChatElement } from 'chat-element-json-ts';
-import { SkillResponseComponentName } from './constants';
+import { SkillResponseElementName } from './constants';
 import { SkillTemplateType } from './SkillTemplate.component';
 
 interface SkillResponseElementPropsType {
@@ -7,7 +7,7 @@ interface SkillResponseElementPropsType {
   template: SkillTemplateType;
 }
 
-export type SkillResponseType = ChatElement<typeof SkillResponseComponentName, SkillResponseElementPropsType>;
+export type SkillResponseType = ChatElement<typeof SkillResponseElementName, SkillResponseElementPropsType>;
 
 export interface SkillResponseParameter {
   version?: string;
@@ -15,7 +15,7 @@ export interface SkillResponseParameter {
 }
 
 export function SkillResponse({ version, skillTemplate }: SkillResponseParameter): SkillResponseType {
-  return new ChatElement(SkillResponseComponentName, {
+  return new ChatElement(SkillResponseElementName, {
     version: version ? version : '2.0',
     template: skillTemplate,
   });

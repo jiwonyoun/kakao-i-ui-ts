@@ -1,13 +1,13 @@
 // Core Component들의 ChatElementName값.
-export const BasicCardComponentName = 'basicCard';
-export const CommerceCardComponentName = 'commerceCard';
-export const ButtonComponentName = 'button';
-export const CarouselComponentName = 'carousel';
-export const CarouselHeaderComponentName = 'carouselHeader';
-export const OutputComponentName = 'output';
-export const QuickReplyComponentName = 'quickReply';
-export const SimpleImageComponentName = 'simpleImage';
-export const SimpleTextComponentName = 'simpleText';
-export const SkillResponseComponentName = 'skillResponse';
-export const SkillTemplateComponentName = 'template';
-export const ThumbnailComponentName = 'thumbnail';
+export const BasicCardElementName = 'basicCard';
+export const CommerceCardElementName = 'commerceCard';
+export const ButtonElementName = 'button';
+export const CarouselElementName = 'carousel';
+export const CarouselHeaderElementName = 'carouselHeader';
+export const OutputElementName = 'output';
+export const QuickReplyElementName = 'quickReply';
+export const SimpleImageElementName = 'simpleImage';
+export const SimpleTextElementName = 'simpleText';
+export const SkillResponseElementName = 'skillResponse';
+export const SkillTemplateElementName = 'template';
+export const ThumbnailElementName = 'thumbnail';
