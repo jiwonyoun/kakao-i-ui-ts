@@ -1,27 +1,37 @@
-import { CoreComponent } from '../../src';
+import {
+  BasicCard,
+  BasicCardType,
+  Button,
+  Carousel,
+  Output,
+  SimpleText,
+  SkillResponse,
+  SkillTemplate,
+  Thumbnail,
+} from '../../src';
 
 describe('코어 컴포넌트 테스트', () => {
   it('렌더링한 컴포넌트가 Kakao i 오픈빌더 챗봇 응답 사양과 동일함', () => {
-    const mySkillResponse = CoreComponent.SkillResponse({
-      skillTemplate: CoreComponent.SkillTemplate({
+    const mySkillResponse = SkillResponse({
+      skillTemplate: SkillTemplate({
         outputs: [
-          CoreComponent.Output({
-            content: CoreComponent.SimpleText({
+          Output({
+            content: SimpleText({
               text: '안녕하세요!',
             }),
           }),
-          CoreComponent.Output({
-            content: CoreComponent.BasicCard({
+          Output({
+            content: BasicCard({
               title: '카드 타이틀',
               description: '카드 디스크립션',
-              thumbnail: CoreComponent.Thumbnail({
+              thumbnail: Thumbnail({
                 imageUrl: 'www.naver.com/logo.png',
                 fixedRatio: true,
                 width: 300,
                 height: 300,
               }),
               buttons: [
-                CoreComponent.Button({
+                Button({
                   label: '카드 버튼 1',
                   action: 'webLink',
                   webLinkUrl: 'www.google.com',
@@ -32,7 +42,7 @@ describe('코어 컴포넌트 테스트', () => {
                     intent_code: 'button_pressed',
                   },
                 }),
-                CoreComponent.Button({
+                Button({
                   label: '카드 버튼 2',
                   action: 'webLink',
                   webLinkUrl: 'www.google.com',
@@ -159,13 +169,13 @@ describe('코어 컴포넌트 테스트', () => {
       },
     ];
 
-    function OrderInfoCard(order: Order): CoreComponent.BasicCardType {
+    function OrderInfoCard(order: Order): BasicCardType {
       const getDescription = (orderedProducts: OrderedProduct[]) =>
         orderedProducts.map((orderedProduct) => orderedProduct.product_name).join(', ');
 
-      return CoreComponent.BasicCard({
+      return BasicCard({
         description: getDescription(order.products),
-        thumbnail: CoreComponent.Thumbnail({
+        thumbnail: Thumbnail({
           imageUrl: order.products[0].image,
           fixedRatio: true,
           width: 600,
@@ -175,8 +185,8 @@ describe('코어 컴포넌트 테스트', () => {
       });
     }
 
-    const orderInfoOutput = CoreComponent.Output({
-      content: CoreComponent.Carousel({
+    const orderInfoOutput = Output({
+      content: Carousel({
         cardType: 'basicCard',
         items: orders.map((order) => OrderInfoCard(order)),
       }),
@@ -214,26 +224,26 @@ describe('코어 컴포넌트 테스트', () => {
   });
 
   it('Button.extra 안 ChatElement 인스턴스 렌더링', () => {
-    const sampleBasicCard = CoreComponent.BasicCard({
+    const sampleBasicCard = BasicCard({
       title: 'myBasicCard',
       description: 'MyDescription',
-      thumbnail: CoreComponent.Thumbnail({
+      thumbnail: Thumbnail({
         imageUrl: 'www.github.com',
         fixedRatio: true,
         width: 300,
         height: 300,
       }),
       buttons: [
-        CoreComponent.Button({
+        Button({
           label: 'Click me to spawn yourBasicCard',
           action: 'block',
           extra: {
             block_info_container: {
               block_info: {
-                basicCard: CoreComponent.BasicCard({
+                basicCard: BasicCard({
                   title: 'yourBasicCard',
                   description: 'yourDescription',
-                  thumbnail: CoreComponent.Thumbnail({
+                  thumbnail: Thumbnail({
                     imageUrl: 'www.github.com',
                     fixedRatio: true,
                     width: 300,
