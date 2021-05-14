@@ -14,7 +14,7 @@ import { BasicCardElementName } from '../core-components/constants';
 
 export type ChatResponseProps = {
   chats: Content[];
-  quickReplies: QuickReplyType[];
+  quickReplies?: QuickReplyType[];
 };
 
 /**
