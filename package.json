@@ -1,6 +1,6 @@
 {
   "name": "kakao-i-ui-ts",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Kakao i Open Builder Chatbot's component wrappers - for typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
