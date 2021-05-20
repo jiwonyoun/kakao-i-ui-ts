@@ -55,15 +55,16 @@ describe('utility-component 테스트', () => {
     });
 
     const mySkillResponse = SkillResponse({
-      skillTemplate: SkillTemplate({
+      version: "2.0",
+      template: SkillTemplate({
         outputs: [
           Output({
-            content: SimpleText({
+            'simpleText': SimpleText({
               text: '안녕하세요!',
             }),
           }),
           Output({
-            content: BasicCard({
+            'basicCard': BasicCard({
               title: '카드 타이틀',
               description: '카드 디스크립션',
               thumbnail: Thumbnail({
