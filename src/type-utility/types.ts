@@ -14,15 +14,12 @@ export type CoreComponentTypeProp<CoreComponentType> = CoreComponentType extends
 >
   ? ChatElementProps
   : never;
-;
-
 /**
  * CoreComponent 타입 (예: type BasicCardType)에서 ElementName 타입을 가져옴
  */
 export type CoreComponentTypeName<CoreComponentType> = CoreComponentType extends ChatElement<
-infer ElementName,
-infer _ChatElementProps
+  infer ElementName,
+  infer _ChatElementProps
 >
-? ElementName
-: never;
-;
+  ? ElementName
+  : never;
