@@ -14,7 +14,6 @@ export type OutputElementPropsType = {
 
 export type OutputType = ChatElement<typeof OutputElementName, OutputElementPropsType>;
 
-
 export function Output(outputProps: OutputElementPropsType): OutputType {
   return new ChatElement(OutputElementName, outputProps);
 }

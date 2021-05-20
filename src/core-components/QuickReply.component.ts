@@ -11,7 +11,6 @@ export type QuickReplyElementPropsType = {
 
 export type QuickReplyType = ChatElement<typeof QuickReplyElementName, QuickReplyElementPropsType>;
 
-
 export function QuickReply(quickReplyProps: QuickReplyElementPropsType): QuickReplyType {
   return new ChatElement(QuickReplyElementName, quickReplyProps);
 }

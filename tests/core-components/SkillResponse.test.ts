@@ -17,12 +17,12 @@ describe('코어 컴포넌트 테스트', () => {
       template: SkillTemplate({
         outputs: [
           Output({
-            content: SimpleText({
+            simpleText: SimpleText({
               text: '안녕하세요!',
             }),
           }),
           Output({
-            content: BasicCard({
+            basicCard: BasicCard({
               title: '카드 타이틀',
               description: '카드 디스크립션',
               thumbnail: Thumbnail({
@@ -187,7 +187,7 @@ describe('코어 컴포넌트 테스트', () => {
     }
 
     const orderInfoOutput = Output({
-      content: Carousel({
+      carousel: Carousel({
         type: 'basicCard',
         items: orders.map((order) => OrderInfoCard(order)),
       }),
