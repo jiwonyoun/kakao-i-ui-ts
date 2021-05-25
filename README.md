@@ -25,3 +25,6 @@ npm test
 
 - https://github.com/winz87/kakao-chatbot-templates - 본 프로젝트 개발에 해당 프로젝트의 여러 개념을 차용하였음
 - https://github.com/facebook/react - 본 프로젝트 개발에 해당 프로젝트의 여러 개념을 차용하였음
+
+## 라이선스
+MIT
