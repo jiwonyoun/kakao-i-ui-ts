@@ -5,6 +5,7 @@ import {
   CarouselType,
   Content,
   Output,
+  OutputType,
   QuickReplyType,
   SkillResponse,
   SkillResponseType,
@@ -12,8 +13,10 @@ import {
 } from '../core-components';
 import { BasicCardElementName } from '../core-components/constants';
 
+type OutputOrContent = OutputType | Content;
+
 export type ChatResponseProps = {
-  chats: Content[];
+  chats: OutputOrContent[];
   quickReplies?: QuickReplyType[];
 };
 
@@ -25,7 +28,10 @@ export type ChatResponseProps = {
 export function ChatResponse({ chats, quickReplies }: ChatResponseProps): SkillResponseType {
   return SkillResponse({
     skillTemplate: SkillTemplate({
-      outputs: chats.map((chat: Content) => {
+      outputs: chats.map((chat: OutputOrContent) => {
+        if (chat.name === 'output') {
+          return chat;
+        }
         return Output({ content: chat });
       }),
       quickReplies,
