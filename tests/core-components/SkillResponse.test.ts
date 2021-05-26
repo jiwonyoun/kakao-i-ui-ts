@@ -13,15 +13,16 @@ import {
 describe('코어 컴포넌트 테스트', () => {
   it('렌더링한 컴포넌트가 Kakao i 오픈빌더 챗봇 응답 사양과 동일함', () => {
     const mySkillResponse = SkillResponse({
-      skillTemplate: SkillTemplate({
+      version: '2.0',
+      template: SkillTemplate({
         outputs: [
           Output({
-            content: SimpleText({
+            simpleText: SimpleText({
               text: '안녕하세요!',
             }),
           }),
           Output({
-            content: BasicCard({
+            basicCard: BasicCard({
               title: '카드 타이틀',
               description: '카드 디스크립션',
               thumbnail: Thumbnail({
@@ -186,8 +187,8 @@ describe('코어 컴포넌트 테스트', () => {
     }
 
     const orderInfoOutput = Output({
-      content: Carousel({
-        cardType: 'basicCard',
+      carousel: Carousel({
+        type: 'basicCard',
         items: orders.map((order) => OrderInfoCard(order)),
       }),
     });

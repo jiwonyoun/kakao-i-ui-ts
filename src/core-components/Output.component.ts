@@ -8,18 +8,12 @@ import { SimpleTextType } from './SimpleText.component';
 
 export type Content = BasicCardType | CommerceCardType | CarouselType | SimpleTextType | SimpleImageType;
 
-interface OutputElementPropsType {
+export type OutputElementPropsType = {
   [chatElementName: string]: Content;
-}
+};
 
 export type OutputType = ChatElement<typeof OutputElementName, OutputElementPropsType>;
 
-export interface OutputParameter {
-  content: Content;
-}
-
-export function Output({ content }: OutputParameter): OutputType {
-  return new ChatElement(OutputElementName, {
-    [content.name]: content,
-  });
+export function Output(outputProps: OutputElementPropsType): OutputType {
+  return new ChatElement(OutputElementName, outputProps);
 }

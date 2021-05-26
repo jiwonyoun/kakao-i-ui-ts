@@ -27,12 +27,13 @@ export type ChatResponseProps = {
  */
 export function ChatResponse({ chats, quickReplies }: ChatResponseProps): SkillResponseType {
   return SkillResponse({
-    skillTemplate: SkillTemplate({
+    version: '2.0',
+    template: SkillTemplate({
       outputs: chats.map((chat: OutputOrContent) => {
         if (chat.name === 'output') {
           return chat;
         }
-        return Output({ content: chat });
+        return Output({ [chat.name]: chat });
       }),
       quickReplies,
     }),
@@ -48,13 +49,13 @@ export function ChatResponse({ chats, quickReplies }: ChatResponseProps): SkillR
 export function CarouselFactory(items: CarouselItemsType, carouselHeader?: CarouselHeaderType): CarouselType {
   if (items.length === 0) {
     return Carousel({
-      cardType: BasicCardElementName,
+      type: BasicCardElementName,
       items,
       header: carouselHeader,
     });
   }
   return Carousel({
-    cardType: items[0].name,
+    type: items[0].name,
     items,
     header: carouselHeader,
   });

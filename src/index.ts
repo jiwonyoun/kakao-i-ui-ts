@@ -1,3 +1,4 @@
 export * from './core-components';
 export * from './utility-components';
-export { renderChatElement } from 'chat-element-json-ts';
+export * from './type-utility';
+export { renderChatElement, ChatElement } from 'chat-element-json-ts';

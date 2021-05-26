@@ -7,23 +7,13 @@ import { BasicCardElementName, CarouselElementName, CommerceCardElementName } fr
 export type CarouselItemsType = BasicCardType[] | CommerceCardType[];
 export type CarouseCardType = typeof BasicCardElementName | typeof CommerceCardElementName;
 
-interface CarouselElementPropsType {
+export type CarouselElementPropsType = {
   type: CarouseCardType;
   items: CarouselItemsType;
   header?: CarouselHeaderType;
-}
+};
 export type CarouselType = ChatElement<typeof CarouselElementName, CarouselElementPropsType>;
 
-export interface CarouselParameter {
-  cardType: CarouseCardType;
-  items: CarouselItemsType;
-  header?: CarouselHeaderType;
-}
-
-export function Carousel({ cardType, items, header }: CarouselParameter): CarouselType {
-  return new ChatElement(CarouselElementName, {
-    type: cardType,
-    items,
-    header,
-  });
+export function Carousel(carouselElementPropsType: CarouselElementPropsType): CarouselType {
+  return new ChatElement(CarouselElementName, carouselElementPropsType);
 }
