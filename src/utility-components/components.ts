@@ -1,3 +1,4 @@
+import { ChatElement } from 'chat-element-json-ts';
 import {
   Carousel,
   CarouselHeaderType,
@@ -15,8 +16,17 @@ import { BasicCardElementName } from '../core-components/constants';
 
 type OutputOrContent = OutputType | Content;
 
+/**
+ * 배열 안 요소 중, null 또는 undefined인 요소를 제거해주는 함수.
+ * > myArray.filter(notEmpty) 처럼 쓸 수 있음.
+ * https://stackoverflow.com/questions/43118692/typescript-filter-out-nulls-from-an-array
+ * */
+function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
+  return value !== null && value !== undefined;
+}
+
 export type ChatResponseProps = {
-  chats: OutputOrContent[];
+  chats: (OutputOrContent | undefined | null)[];
   quickReplies?: QuickReplyType[];
 };
 
@@ -40,7 +50,7 @@ export function ChatResponse({ chats, quickReplies }: ChatResponseProps): SkillR
   return SkillResponse({
     version: '2.0',
     template: SkillTemplate({
-      outputs: chats.map((chat: OutputOrContent) => {
+      outputs: chats.filter(notEmpty).map((chat: OutputOrContent) => {
         if (chat.name === 'output') {
           return chat;
         }
