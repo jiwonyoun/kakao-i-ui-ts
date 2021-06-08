@@ -20,7 +20,8 @@ type OutputOrContent = OutputType | Content;
  * 배열 안 요소 중, null 또는 undefined인 요소를 제거해주는 함수.
  * > myArray.filter(notEmpty) 처럼 쓸 수 있음.
  * https://stackoverflow.com/questions/43118692/typescript-filter-out-nulls-from-an-array
- * */
+ *
+ */
 function notEmpty<TValue>(value: TValue | null | undefined): value is TValue {
   return value !== null && value !== undefined;
 }
