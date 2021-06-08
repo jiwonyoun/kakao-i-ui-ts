@@ -27,7 +27,7 @@ function notEmpty<TValue>(value: TValue | null | undefined | void): value is TVa
 }
 
 export type ChatResponseProps = {
-  chats: (OutputOrContent | undefined | null)[];
+  chats: (OutputOrContent | undefined | null | void)[];
   quickReplies?: QuickReplyType[];
 };
 
