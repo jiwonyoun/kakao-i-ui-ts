@@ -9,4 +9,5 @@ export * from './SimpleImage.component';
 export * from './SimpleText.component';
 export * from './SkillTemplate.component';
 export * from './Thumbnail.component';
+export * from './Profile.component';
 export * from './SkillResponse.component';

@@ -1,0 +1,13 @@
+import { ChatElement } from 'chat-element-json-ts';
+import { ProfileElementName } from './constants';
+
+export type ProfileElementPropsType = {
+  nickname: string;
+  imageUrl: string;
+};
+
+export type ProfileType = ChatElement<typeof ProfileElementName, ProfileElementPropsType>;
+
+export function Profile(profileProps: ProfileElementPropsType) {
+  return new ChatElement(ProfileElementName, profileProps);
+}

@@ -11,3 +11,4 @@ export const SimpleTextElementName = 'simpleText';
 export const SkillResponseElementName = 'skillResponse';
 export const SkillTemplateElementName = 'template';
 export const ThumbnailElementName = 'thumbnail';
+export const ProfileElementName = 'profile';
