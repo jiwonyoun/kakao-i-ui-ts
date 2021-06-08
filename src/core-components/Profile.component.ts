@@ -8,6 +8,6 @@ export type ProfileElementPropsType = {
 
 export type ProfileType = ChatElement<typeof ProfileElementName, ProfileElementPropsType>;
 
-export function Profile(profileProps: ProfileElementPropsType) {
+export function Profile(profileProps: ProfileElementPropsType): ProfileType {
   return new ChatElement(ProfileElementName, profileProps);
 }
