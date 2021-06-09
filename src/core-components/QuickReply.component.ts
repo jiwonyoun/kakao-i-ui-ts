@@ -5,7 +5,7 @@ export type QuickReplyElementPropsType = {
   label: string;
   action: 'message' | 'block';
   messageText: string;
-  blockId: string;
+  blockId?: string;
   extra?: Record<string, any>;
 };
 
