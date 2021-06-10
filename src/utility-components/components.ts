@@ -26,7 +26,7 @@ function notEmpty<TValue>(value: TValue | null | undefined | void): value is TVa
   return value !== null && value !== undefined;
 }
 
-export type ChatResponseProps = {
+export type SkillResponseFactoryProps = {
   chats: (OutputOrContent | undefined | null | void)[];
   quickReplies?: QuickReplyType[];
 };
@@ -44,10 +44,10 @@ export function OutputFactory(content: Content): OutputType {
 
 /**
  * SkillResponse를 생성해주는 헬퍼 함수. Content 배열과 QuickReply 배열을 인자로 받아 완전한 챗봇 응답 데이터를 생성함.
- * @param ChatResponseProps
+ * @param SkillResponseFactoryProps
  * @returns
  */
-export function ChatResponse({ chats, quickReplies }: ChatResponseProps): SkillResponseType {
+export function SkillResponseFactory({ chats, quickReplies }: SkillResponseFactoryProps): SkillResponseType {
   return SkillResponse({
     version: '2.0',
     template: SkillTemplate({

@@ -1,5 +1,4 @@
 import {
-  ChatResponse,
   SimpleText,
   BasicCard,
   Thumbnail,
@@ -7,11 +6,12 @@ import {
   SkillResponse,
   SkillTemplate,
   Output,
+  SkillResponseFactory,
 } from '../../src';
 
 describe('utility-component 테스트', () => {
-  it(`${ChatResponse.name} 컴포넌트 테스트`, () => {
-    const mySkillResponseByChatResponseFunction = ChatResponse({
+  it(`${SkillResponseFactory.name} 컴포넌트 테스트`, () => {
+    const mySkillResponseBySkillResponseFactoryFunction = SkillResponseFactory({
       chats: [
         SimpleText({
           text: '안녕하세요!',
@@ -55,16 +55,16 @@ describe('utility-component 테스트', () => {
     });
 
     const mySkillResponse = SkillResponse({
-      version: "2.0",
+      version: '2.0',
       template: SkillTemplate({
         outputs: [
           Output({
-            'simpleText': SimpleText({
+            simpleText: SimpleText({
               text: '안녕하세요!',
             }),
           }),
           Output({
-            'basicCard': BasicCard({
+            basicCard: BasicCard({
               title: '카드 타이틀',
               description: '카드 디스크립션',
               thumbnail: Thumbnail({
@@ -104,6 +104,6 @@ describe('utility-component 테스트', () => {
       }),
     });
 
-    expect(mySkillResponseByChatResponseFunction.render()).toStrictEqual(mySkillResponse.render());
+    expect(mySkillResponseBySkillResponseFactoryFunction.render()).toStrictEqual(mySkillResponse.render());
   });
 });
