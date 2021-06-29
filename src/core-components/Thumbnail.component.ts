@@ -4,8 +4,8 @@ import { ThumbnailElementName } from './constants';
 export type ThumbnailElementPropsType = {
   imageUrl: string;
   fixedRatio?: boolean;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
 };
 
 export type ThumbnailType = ChatElement<typeof ThumbnailElementName, ThumbnailElementPropsType>;
