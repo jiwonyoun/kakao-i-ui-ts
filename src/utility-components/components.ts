@@ -3,7 +3,7 @@ import {
   Carousel,
   CarouselHeaderType,
   CarouselType,
-  DefaultCarouselItemsType,
+  DefaultCarouselItemArrayType,
   DefaultContentType,
   Output,
   OutputType,
@@ -74,7 +74,7 @@ export function SkillResponseFactory<AllowedContentType extends ChatElement = De
  * @param carouselHeader CarouselHeader
  * @returns
  */
-export function CarouselFactory<CarouselItemsType extends ArrayOfChatElements = DefaultCarouselItemsType>(
+export function CarouselFactory<CarouselItemsType extends ArrayOfChatElements = DefaultCarouselItemArrayType>(
   items: CarouselItemsType,
   carouselHeader?: CarouselHeaderType,
 ): CarouselType<CoreComponentTypeName<Unarray<CarouselItemsType>> | typeof BasicCardElementName, CarouselItemsType> {

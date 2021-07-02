@@ -6,19 +6,23 @@ import { BasicCardElementName, CarouselElementName, CommerceCardElementName } fr
 import { ArrayOfChatElements } from '..';
 
 export type DefaultCarouselCardType = typeof BasicCardElementName | typeof CommerceCardElementName;
-export type DefaultCarouselItemsType = ArrayOfChatElements<BasicCardType | CommerceCardType>;
+export type DefaultCarouselItemType = BasicCardType | CommerceCardType;
+export type DefaultCarouselItemArrayType = ArrayOfChatElements<DefaultCarouselItemType>;
 
-export type CarouselElementPropsType<CarouselCardType, CarouselItemsType> = {
+export type CarouselElementPropsType<CarouselCardType, CarouselItemsType extends ArrayOfChatElements> = {
   type: CarouselCardType;
   items: CarouselItemsType;
   header?: CarouselHeaderType;
 };
 export type CarouselType<
   CarouselCardType = DefaultCarouselCardType,
-  CarouselItemsType = DefaultCarouselItemsType
+  CarouselItemsType extends ArrayOfChatElements = DefaultCarouselItemArrayType
 > = ChatElement<typeof CarouselElementName, CarouselElementPropsType<CarouselCardType, CarouselItemsType>>;
 
-export function Carousel<CarouselCardType = DefaultCarouselCardType, CarouselItemsType = DefaultCarouselItemsType>(
+export function Carousel<
+  CarouselCardType = DefaultCarouselCardType,
+  CarouselItemsType extends ArrayOfChatElements = DefaultCarouselItemArrayType
+>(
   carouselElementPropsType: CarouselElementPropsType<CarouselCardType, CarouselItemsType>,
 ): CarouselType<CarouselCardType, CarouselItemsType> {
   return new ChatElement(CarouselElementName, carouselElementPropsType);
