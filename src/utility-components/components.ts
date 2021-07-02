@@ -2,9 +2,9 @@ import { ChatElement } from 'chat-element-json-ts';
 import {
   Carousel,
   CarouselHeaderType,
-  CarouselItemsType,
   CarouselType,
-  Content,
+  DefaultCarouselItemsType,
+  DefaultContentType,
   Output,
   OutputType,
   QuickReplyType,
@@ -13,8 +13,9 @@ import {
   SkillTemplate,
 } from '../core-components';
 import { BasicCardElementName } from '../core-components/constants';
+import { ArrayOfChatElements, CoreComponentTypeName, Unarray } from '../type-utility';
 
-type OutputOrContent = OutputType | Content;
+type OutputOrContent<AllowedContentType> = OutputType<AllowedContentType> | AllowedContentType;
 
 /**
  * 배열 안 요소 중, null 또는 undefined인 요소를 제거해주는 함수.
@@ -26,8 +27,8 @@ function notEmpty<TValue>(value: TValue | null | undefined | void): value is TVa
   return value !== null && value !== undefined;
 }
 
-export type SkillResponseFactoryProps = {
-  chats: (OutputOrContent | undefined | null | void)[];
+export type SkillResponseFactoryProps<AllowedContentType> = {
+  chats: (OutputOrContent<AllowedContentType> | undefined | null | void)[];
   quickReplies?: QuickReplyType[];
 };
 
@@ -36,8 +37,10 @@ export type SkillResponseFactoryProps = {
  * @param content
  * @returns
  */
-export function OutputFactory(content: Content): OutputType {
-  return Output({
+export function OutputFactory<AllowedContentType extends ChatElement = DefaultContentType>(
+  content: AllowedContentType,
+): OutputType<AllowedContentType> {
+  return Output<AllowedContentType>({
     [content.name]: content,
   });
 }
@@ -47,15 +50,18 @@ export function OutputFactory(content: Content): OutputType {
  * @param SkillResponseFactoryProps
  * @returns
  */
-export function SkillResponseFactory({ chats, quickReplies }: SkillResponseFactoryProps): SkillResponseType {
-  return SkillResponse({
+export function SkillResponseFactory<AllowedContentType extends ChatElement = DefaultContentType>({
+  chats,
+  quickReplies,
+}: SkillResponseFactoryProps<AllowedContentType>): SkillResponseType<AllowedContentType> {
+  return SkillResponse<AllowedContentType>({
     version: '2.0',
-    template: SkillTemplate({
-      outputs: chats.filter(notEmpty).map((chat: OutputOrContent) => {
+    template: SkillTemplate<AllowedContentType>({
+      outputs: chats.filter(notEmpty).map((chat: OutputOrContent<AllowedContentType>) => {
         if (chat.name === 'output') {
-          return chat;
+          return chat as OutputType<AllowedContentType>;
         }
-        return OutputFactory(chat);
+        return OutputFactory<AllowedContentType>(chat as AllowedContentType);
       }),
       quickReplies,
     }),
@@ -68,16 +74,19 @@ export function SkillResponseFactory({ chats, quickReplies }: SkillResponseFacto
  * @param carouselHeader CarouselHeader
  * @returns
  */
-export function CarouselFactory(items: CarouselItemsType, carouselHeader?: CarouselHeaderType): CarouselType {
+export function CarouselFactory<CarouselItemsType extends ArrayOfChatElements = DefaultCarouselItemsType>(
+  items: CarouselItemsType,
+  carouselHeader?: CarouselHeaderType,
+): CarouselType<CoreComponentTypeName<Unarray<CarouselItemsType>> | typeof BasicCardElementName, CarouselItemsType> {
   if (items.length === 0) {
-    return Carousel({
+    return Carousel<typeof BasicCardElementName, CarouselItemsType>({
       type: BasicCardElementName,
       items,
       header: carouselHeader,
     });
   }
-  return Carousel({
-    type: items[0].name,
+  return Carousel<CoreComponentTypeName<Unarray<CarouselItemsType>>, CarouselItemsType>({
+    type: items[0].name as CoreComponentTypeName<Unarray<CarouselItemsType>>,
     items,
     header: carouselHeader,
   });

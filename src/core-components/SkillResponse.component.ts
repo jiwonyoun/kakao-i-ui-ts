@@ -1,14 +1,20 @@
 import { ChatElement } from 'chat-element-json-ts';
+import { DefaultContentType } from '.';
 import { SkillResponseElementName } from './constants';
 import { SkillTemplateType } from './SkillTemplate.component';
 
-export type SkillResponseElementPropsType = {
+export type SkillResponseElementPropsType<AllowedContentType = DefaultContentType> = {
   version: string;
-  template: SkillTemplateType;
+  template: SkillTemplateType<AllowedContentType>;
 };
 
-export type SkillResponseType = ChatElement<typeof SkillResponseElementName, SkillResponseElementPropsType>;
+export type SkillResponseType<AllowedContentType = DefaultContentType> = ChatElement<
+  typeof SkillResponseElementName,
+  SkillResponseElementPropsType<AllowedContentType>
+>;
 
-export function SkillResponse(skillResponseProps: SkillResponseElementPropsType): SkillResponseType {
+export function SkillResponse<AllowedContentType = DefaultContentType>(
+  skillResponseProps: SkillResponseElementPropsType<AllowedContentType>,
+): SkillResponseType<AllowedContentType> {
   return new ChatElement(SkillResponseElementName, skillResponseProps);
 }

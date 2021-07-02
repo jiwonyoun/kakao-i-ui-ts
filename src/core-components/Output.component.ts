@@ -6,14 +6,19 @@ import { OutputElementName } from './constants';
 import { SimpleImageType } from './SimpleImage.component';
 import { SimpleTextType } from './SimpleText.component';
 
-export type Content = BasicCardType | CommerceCardType | CarouselType | SimpleTextType | SimpleImageType;
+export type DefaultContentType = BasicCardType | CommerceCardType | CarouselType | SimpleTextType | SimpleImageType;
 
-export type OutputElementPropsType = {
-  [chatElementName: string]: Content;
+export type OutputElementPropsType<AllowedContentType> = {
+  [chatElementName: string]: AllowedContentType;
 };
 
-export type OutputType = ChatElement<typeof OutputElementName, OutputElementPropsType>;
+export type OutputType<AllowedContentType> = ChatElement<
+  typeof OutputElementName,
+  OutputElementPropsType<AllowedContentType>
+>;
 
-export function Output(outputProps: OutputElementPropsType): OutputType {
+export function Output<AllowedContentType = DefaultContentType>(
+  outputProps: OutputElementPropsType<AllowedContentType>,
+): OutputType<AllowedContentType> {
   return new ChatElement(OutputElementName, outputProps);
 }

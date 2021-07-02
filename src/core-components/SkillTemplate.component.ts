@@ -1,15 +1,20 @@
 import { ChatElement } from 'chat-element-json-ts';
 import { SkillTemplateElementName } from './constants';
-import { OutputType } from './Output.component';
+import { DefaultContentType, OutputType } from './Output.component';
 import { QuickReplyType } from './QuickReply.component';
 
-export type SkillTemplateElementPropsType = {
-  outputs: OutputType[];
+export type SkillTemplateElementPropsType<AllowedContentType> = {
+  outputs: OutputType<AllowedContentType>[];
   quickReplies?: QuickReplyType[];
 };
 
-export type SkillTemplateType = ChatElement<typeof SkillTemplateElementName, SkillTemplateElementPropsType>;
+export type SkillTemplateType<AllowedContentType = DefaultContentType> = ChatElement<
+  typeof SkillTemplateElementName,
+  SkillTemplateElementPropsType<AllowedContentType>
+>;
 
-export function SkillTemplate(skillTemplateProps: SkillTemplateElementPropsType): SkillTemplateType {
+export function SkillTemplate<AllowedContentType = DefaultContentType>(
+  skillTemplateProps: SkillTemplateElementPropsType<AllowedContentType>,
+): SkillTemplateType<AllowedContentType> {
   return new ChatElement(SkillTemplateElementName, skillTemplateProps);
 }
