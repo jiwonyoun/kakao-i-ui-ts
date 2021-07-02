@@ -10,7 +10,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
