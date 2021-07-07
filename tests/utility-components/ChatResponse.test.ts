@@ -1,10 +1,16 @@
 import {
   BasicCard,
+  BasicCardCarouselFactory,
+  BasicCardType,
   Button,
   CarouselFactory,
+  CarouselType,
   DefaultContentType,
   Output,
+  OutputFactory,
+  OutputType,
   SimpleText,
+  SimpleTextType,
   SkillResponse,
   SkillResponseFactory,
   SkillResponseType,
@@ -14,6 +20,11 @@ import {
 
 describe('utility-component 테스트', () => {
   it(`${SkillResponseFactory.name} 컴포넌트 테스트`, () => {
+    const mySimpleTextOutput: OutputType<SimpleTextType> = OutputFactory(SimpleText({ text: '' }));
+    const myBasicCardCarouselOutput = OutputFactory(
+      CarouselFactory([BasicCard({ thumbnail: Thumbnail({ imageUrl: '' }) })]),
+    );
+
     const mySkillResponseBySkillResponseFactoryFunction: SkillResponseType = SkillResponseFactory({
       chats: [
         SimpleText({
