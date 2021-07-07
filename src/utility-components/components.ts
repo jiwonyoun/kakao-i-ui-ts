@@ -1,8 +1,10 @@
 import { ChatElement } from 'chat-element-json-ts';
 import {
+  BasicCardType,
   Carousel,
   CarouselHeaderType,
   CarouselType,
+  CommerceCardType,
   DefaultCarouselItemArrayType,
   DefaultContentType,
   Output,
@@ -37,7 +39,7 @@ export type SkillResponseFactoryProps<AllowedContentType> = {
  * @param content
  * @returns
  */
-export function OutputFactory<AllowedContentType extends ChatElement = DefaultContentType>(
+export function OutputFactory<AllowedContentType extends ChatElement<any, any> = DefaultContentType>(
   content: AllowedContentType,
 ): OutputType<AllowedContentType> {
   return Output<AllowedContentType>({
@@ -50,10 +52,10 @@ export function OutputFactory<AllowedContentType extends ChatElement = DefaultCo
  * @param SkillResponseFactoryProps
  * @returns
  */
-export function SkillResponseFactory<AllowedContentType extends ChatElement = DefaultContentType>({
+export function BaseSkilLResponseFactory<AllowedContentType extends ChatElement>({
   chats,
   quickReplies,
-}: SkillResponseFactoryProps<AllowedContentType>): SkillResponseType<AllowedContentType> {
+}: SkillResponseFactoryProps<AllowedContentType>) {
   return SkillResponse<AllowedContentType>({
     version: '2.0',
     template: SkillTemplate<AllowedContentType>({
@@ -69,12 +71,24 @@ export function SkillResponseFactory<AllowedContentType extends ChatElement = De
 }
 
 /**
+ * SkillResponse를 생성해주는 헬퍼 함수. DefaultContentType 타입의 chats 배열과 QuickReply 배열을 인자로 받아 완전한 챗봇 응답 데이터를 생성함.
+ * @param SkillResponseFactoryProps
+ * @returns
+ */
+export function SkillResponseFactory({
+  chats,
+  quickReplies,
+}: SkillResponseFactoryProps<DefaultContentType>): SkillResponseType<DefaultContentType> {
+  return BaseSkilLResponseFactory<DefaultContentType>({ chats, quickReplies });
+}
+
+/**
  * Carousel을 생성해주는 헬퍼 함수. CarouselItemsType을 인자로 받아 Carousel 객체를 알아서 생성함.
  * @param items 캐로셀에 들어갈 요소들
  * @param carouselHeader CarouselHeader
  * @returns
  */
-export function CarouselFactory<CarouselItemsType extends ArrayOfChatElements = DefaultCarouselItemArrayType>(
+export function BaseCarouselFactory<CarouselItemsType extends ArrayOfChatElements>(
   items: CarouselItemsType,
   carouselHeader?: CarouselHeaderType,
 ): CarouselType<CoreComponentTypeName<Unarray<CarouselItemsType>> | typeof BasicCardElementName, CarouselItemsType> {
@@ -90,4 +104,25 @@ export function CarouselFactory<CarouselItemsType extends ArrayOfChatElements = 
     items,
     header: carouselHeader,
   });
+}
+
+/**
+ * DefaultCarouselItemArrayType 타입(=BasicCardType[] | CommerceCardType[])의 items를 인자로 받아 Carousel을 생성함.
+ */
+export function CarouselFactory(items: DefaultCarouselItemArrayType, carouselHeader?: CarouselHeaderType) {
+  return BaseCarouselFactory(items, carouselHeader);
+}
+
+/**
+ * BasicCardType[]의 items를 받아 Carousel을 생성함.
+ */
+export function BasicCardCarouselFactory(items: BasicCardType[]) {
+  return BaseCarouselFactory<BasicCardType[]>(items);
+}
+
+/**
+ * CommerceCard[]의 items를 받아 Carousel을 생성함.
+ */
+export function CommerceCardCarouselFactory(items: CommerceCardType[], carouselHeader?: CarouselHeaderType) {
+  return BaseCarouselFactory<CommerceCardType[]>(items, carouselHeader);
 }
