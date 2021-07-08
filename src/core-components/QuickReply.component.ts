@@ -4,7 +4,7 @@ import { QuickReplyElementName } from './constants';
 export type QuickReplyElementPropsType = {
   label: string;
   action: 'message' | 'block';
-  messageText: string;
+  messageText?: string;
   blockId?: string;
   extra?: Record<string, any>;
 };
