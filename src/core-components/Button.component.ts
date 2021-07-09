@@ -3,7 +3,7 @@ import { ButtonElementName } from './constants';
 
 export type ButtonType = ChatElement<typeof ButtonElementName, ButtonElementPropsType>;
 
-export type ButtonElementPropsType = {
+export class ButtonElementPropsType {
   label: string;
   action: 'webLink' | 'message' | 'block' | 'phone';
   webLinkUrl?: string;
@@ -11,7 +11,7 @@ export type ButtonElementPropsType = {
   blockId?: string;
   phoneNumber?: string;
   extra?: Record<string, any>;
-};
+}
 
 export function Button(buttonProps: ButtonElementPropsType): ButtonType {
   return new ChatElement(ButtonElementName, buttonProps);

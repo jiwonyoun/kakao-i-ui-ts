@@ -1,12 +1,12 @@
 import { ChatElement } from 'chat-element-json-ts';
 import { ThumbnailElementName } from './constants';
 
-export type ThumbnailElementPropsType = {
+export class ThumbnailElementPropsType {
   imageUrl: string;
   fixedRatio?: boolean;
   width?: number;
   height?: number;
-};
+}
 
 export type ThumbnailType = ChatElement<typeof ThumbnailElementName, ThumbnailElementPropsType>;
 

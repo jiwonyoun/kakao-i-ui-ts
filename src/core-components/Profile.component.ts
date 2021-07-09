@@ -1,10 +1,10 @@
 import { ChatElement } from 'chat-element-json-ts';
 import { ProfileElementName } from './constants';
 
-export type ProfileElementPropsType = {
+export class ProfileElementPropsType {
   nickname: string;
   imageUrl: string;
-};
+}
 
 export type ProfileType = ChatElement<typeof ProfileElementName, ProfileElementPropsType>;
 

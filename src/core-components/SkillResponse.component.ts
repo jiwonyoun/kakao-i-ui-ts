@@ -3,10 +3,10 @@ import { DefaultContentType } from '.';
 import { SkillResponseElementName } from './constants';
 import { SkillTemplateType } from './SkillTemplate.component';
 
-export type SkillResponseElementPropsType<AllowedContentType = DefaultContentType> = {
+export class SkillResponseElementPropsType<AllowedContentType = DefaultContentType> {
   version: string;
   template: SkillTemplateType<AllowedContentType>;
-};
+}
 
 export type SkillResponseType<AllowedContentType = DefaultContentType> = ChatElement<
   typeof SkillResponseElementName,

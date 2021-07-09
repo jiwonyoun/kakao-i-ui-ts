@@ -8,9 +8,9 @@ import { SimpleTextType } from './SimpleText.component';
 
 export type DefaultContentType = BasicCardType | CommerceCardType | CarouselType | SimpleTextType | SimpleImageType;
 
-export type OutputElementPropsType<AllowedContentType> = {
+export class OutputElementPropsType<AllowedContentType> {
   [chatElementName: string]: AllowedContentType;
-};
+}
 
 export type OutputType<AllowedContentType> = ChatElement<
   typeof OutputElementName,

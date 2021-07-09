@@ -3,10 +3,10 @@ import { SkillTemplateElementName } from './constants';
 import { DefaultContentType, OutputType } from './Output.component';
 import { QuickReplyType } from './QuickReply.component';
 
-export type SkillTemplateElementPropsType<AllowedContentType> = {
+export class SkillTemplateElementPropsType<AllowedContentType> {
   outputs: OutputType<AllowedContentType>[];
   quickReplies?: QuickReplyType[];
-};
+}
 
 export type SkillTemplateType<AllowedContentType = DefaultContentType> = ChatElement<
   typeof SkillTemplateElementName,

@@ -4,7 +4,7 @@ import { ButtonType } from './Button.component';
 import { CommerceCardElementName } from './constants';
 import { ProfileType } from './Profile.component';
 
-export type CommerceCardElementPropsType = {
+export class CommerceCardElementPropsType {
   description: string;
   price: number;
   currency: 'won';
@@ -14,7 +14,7 @@ export type CommerceCardElementPropsType = {
   thumbnails: ThumbnailType[];
   profile?: ProfileType;
   buttons: ButtonType[];
-};
+}
 
 export type CommerceCardType = ChatElement<typeof CommerceCardElementName, CommerceCardElementPropsType>;
 

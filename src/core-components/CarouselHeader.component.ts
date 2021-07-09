@@ -1,13 +1,13 @@
 import { ChatElement } from 'chat-element-json-ts';
 import { CarouselElementName } from './constants';
 
-export type CarouselHeaderElementPropsType = {
+export class CarouselHeaderElementPropsType {
   title: string;
   description: string;
   thumbnail: {
     imageUrl: string;
   };
-};
+}
 
 export type CarouselHeaderType = ChatElement<typeof CarouselElementName, CarouselHeaderElementPropsType>;
 

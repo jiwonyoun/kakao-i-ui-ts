@@ -3,12 +3,12 @@ import { ThumbnailType } from './Thumbnail.component';
 import { ButtonType } from './Button.component';
 import { BasicCardElementName } from './constants';
 
-export type BasicCardElementPropsType = {
+export class BasicCardElementPropsType {
   title?: string;
   description?: string;
-  thumbnail?: ThumbnailType;
+  thumbnail: ThumbnailType;
   buttons?: ButtonType[];
-};
+}
 
 export type BasicCardType = ChatElement<typeof BasicCardElementName, BasicCardElementPropsType>;
 

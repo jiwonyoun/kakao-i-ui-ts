@@ -1,13 +1,13 @@
 import { ChatElement } from 'chat-element-json-ts';
 import { QuickReplyElementName } from './constants';
 
-export type QuickReplyElementPropsType = {
+export class QuickReplyElementPropsType {
   label: string;
   action: 'message' | 'block';
   messageText: string;
   blockId?: string;
   extra?: Record<string, any>;
-};
+}
 
 export type QuickReplyType = ChatElement<typeof QuickReplyElementName, QuickReplyElementPropsType>;
 

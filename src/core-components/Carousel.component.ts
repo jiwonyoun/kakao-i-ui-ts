@@ -9,11 +9,11 @@ export type DefaultCarouselCardType = typeof BasicCardElementName | typeof Comme
 export type DefaultCarouselItemType = BasicCardType | CommerceCardType;
 export type DefaultCarouselItemArrayType = ArrayOfChatElements<DefaultCarouselItemType>;
 
-export type CarouselElementPropsType<CarouselCardType, CarouselItemsType extends ArrayOfChatElements> = {
+export class CarouselElementPropsType<CarouselCardType, CarouselItemsType extends ArrayOfChatElements> {
   type: CarouselCardType;
   items: CarouselItemsType;
   header?: CarouselHeaderType;
-};
+}
 export type CarouselType<
   CarouselCardType = DefaultCarouselCardType,
   CarouselItemsType extends ArrayOfChatElements = DefaultCarouselItemArrayType
