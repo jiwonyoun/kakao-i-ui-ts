@@ -15,6 +15,7 @@ import {
   SkillTemplate,
 } from '../core-components';
 import { BasicCardElementName } from '../core-components/constants';
+
 import { ArrayOfChatElements, CoreComponentTypeName, Unarray } from '../type-utility';
 
 type OutputOrContent<AllowedContentType> = OutputType<AllowedContentType> | AllowedContentType;
