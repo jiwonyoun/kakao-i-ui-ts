@@ -6,7 +6,7 @@ import { BasicCardElementName } from './constants';
 export class BasicCardElementPropsType {
   title?: string;
   description?: string;
-  thumbnail: ThumbnailType;
+  thumbnail?: ThumbnailType;
   buttons?: ButtonType[];
 }
 
