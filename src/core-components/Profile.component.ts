@@ -1,8 +1,12 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { ChatElement } from 'chat-element-json-ts';
 import { ProfileElementName } from './constants';
 
 export class ProfileElementPropsType {
+  @ApiProperty()
   nickname: string;
+
+  @ApiProperty()
   imageUrl: string;
 }
 

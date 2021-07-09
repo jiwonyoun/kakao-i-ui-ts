@@ -1,7 +1,9 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { ChatElement } from 'chat-element-json-ts';
 import { SimpleTextElementName } from './constants';
 
 export class SimpleTextElementPropsType {
+  @ApiProperty()
   text: string;
 }
 

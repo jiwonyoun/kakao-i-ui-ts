@@ -4,14 +4,20 @@ import { CommerceCardType } from './CommerceCard.component';
 import { CarouselHeaderType } from './CarouselHeader.component';
 import { BasicCardElementName, CarouselElementName, CommerceCardElementName } from './constants';
 import { ArrayOfChatElements } from '..';
+import { ApiProperty } from '@nestjs/swagger';
 
 export type DefaultCarouselCardType = typeof BasicCardElementName | typeof CommerceCardElementName;
 export type DefaultCarouselItemType = BasicCardType | CommerceCardType;
 export type DefaultCarouselItemArrayType = ArrayOfChatElements<DefaultCarouselItemType>;
 
 export class CarouselElementPropsType<CarouselCardType, CarouselItemsType extends ArrayOfChatElements> {
+  @ApiProperty()
   type: CarouselCardType;
+
+  @ApiProperty()
   items: CarouselItemsType;
+
+  @ApiProperty()
   header?: CarouselHeaderType;
 }
 export type CarouselType<
