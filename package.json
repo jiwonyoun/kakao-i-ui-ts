@@ -58,6 +58,8 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "chat-element-json-ts": "^3.0.0"
+    "@nestjs/swagger": "^5.0.0",
+    "chat-element-json-ts": "^3.0.0",
+    "swagger-ui-express": "^4.1.6"
   }
 }
