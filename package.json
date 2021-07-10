@@ -1,6 +1,6 @@
 {
   "name": "kakao-i-ui-ts",
-  "version": "7.0.5",
+  "version": "8.3.0",
   "description": "Kakao i Open Builder Chatbot's component wrappers - for typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -58,6 +58,9 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "chat-element-json-ts": "^3.0.0"
+    "@nestjs/core": "^8.0.0",
+    "@nestjs/swagger": "^5.0.0",
+    "chat-element-json-ts": "^3.0.0",
+    "swagger-ui-express": "^4.1.6"
   }
 }

@@ -1,12 +1,16 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { ChatElement } from 'chat-element-json-ts';
 import { DefaultContentType } from '.';
 import { SkillResponseElementName } from './constants';
 import { SkillTemplateType } from './SkillTemplate.component';
 
-export type SkillResponseElementPropsType<AllowedContentType = DefaultContentType> = {
+export class SkillResponseElementPropsType<AllowedContentType = DefaultContentType> {
+  @ApiProperty()
   version: string;
+
+  @ApiProperty()
   template: SkillTemplateType<AllowedContentType>;
-};
+}
 
 export type SkillResponseType<AllowedContentType = DefaultContentType> = ChatElement<
   typeof SkillResponseElementName,

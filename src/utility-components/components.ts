@@ -15,6 +15,7 @@ import {
   SkillTemplate,
 } from '../core-components';
 import { BasicCardElementName } from '../core-components/constants';
+
 import { ArrayOfChatElements, CoreComponentTypeName, Unarray } from '../type-utility';
 
 type OutputOrContent<AllowedContentType> = OutputType<AllowedContentType> | AllowedContentType;
@@ -29,10 +30,10 @@ function notEmpty<TValue>(value: TValue | null | undefined | void): value is TVa
   return value !== null && value !== undefined;
 }
 
-export type SkillResponseFactoryProps<AllowedContentType> = {
+export class SkillResponseFactoryProps<AllowedContentType> {
   chats: (OutputOrContent<AllowedContentType> | undefined | null | void)[];
   quickReplies?: QuickReplyType[];
-};
+}
 
 /**
  * Content 1개를 받아 Output 1개를 쉽게 생성해주는 함수

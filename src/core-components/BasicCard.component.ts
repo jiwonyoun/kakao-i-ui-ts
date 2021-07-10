@@ -2,13 +2,21 @@ import { ChatElement } from 'chat-element-json-ts';
 import { ThumbnailType } from './Thumbnail.component';
 import { ButtonType } from './Button.component';
 import { BasicCardElementName } from './constants';
+import { ApiProperty } from '@nestjs/swagger';
 
-export type BasicCardElementPropsType = {
+export class BasicCardElementPropsType {
+  @ApiProperty()
   title?: string;
+
+  @ApiProperty()
   description?: string;
-  thumbnail: ThumbnailType;
+
+  @ApiProperty()
+  thumbnail?: ThumbnailType;
+
+  @ApiProperty()
   buttons?: ButtonType[];
-};
+}
 
 export type BasicCardType = ChatElement<typeof BasicCardElementName, BasicCardElementPropsType>;
 

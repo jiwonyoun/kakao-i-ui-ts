@@ -1,13 +1,19 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { ChatElement } from 'chat-element-json-ts';
 import { CarouselElementName } from './constants';
 
-export type CarouselHeaderElementPropsType = {
+export class CarouselHeaderElementPropsType {
+  @ApiProperty()
   title: string;
+
+  @ApiProperty()
   description: string;
+
+  @ApiProperty()
   thumbnail: {
     imageUrl: string;
   };
-};
+}
 
 export type CarouselHeaderType = ChatElement<typeof CarouselElementName, CarouselHeaderElementPropsType>;
 
