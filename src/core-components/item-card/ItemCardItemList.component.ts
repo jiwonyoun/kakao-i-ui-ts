@@ -6,13 +6,8 @@ export type ItemCardItemListPropsType = {
   description: string;
 };
 
-export type ItemCardItemListType = ChatElement<
-  typeof ItemCardItemListElementName,
-  ItemCardItemListPropsType
->;
+export type ItemCardItemListType = ChatElement<typeof ItemCardItemListElementName, ItemCardItemListPropsType>;
 
-export function ItemCardItemList(
-  itemCardListItemProps: ItemCardItemListPropsType,
-): ItemCardItemListType {
+export function ItemCardItemList(itemCardListItemProps: ItemCardItemListPropsType): ItemCardItemListType {
   return new ChatElement(ItemCardItemListElementName, itemCardListItemProps);
 }

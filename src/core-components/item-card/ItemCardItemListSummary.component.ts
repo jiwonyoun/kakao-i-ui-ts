@@ -14,8 +14,5 @@ export type ItemCardItemListSummaryType = ChatElement<
 export function ItemCardItemListSummary(
   itemCardItemListSummaryProps: ItemCardItemListSummaryPropsType,
 ): ItemCardItemListSummaryType {
-  return new ChatElement(
-    ItemCardItemListSummaryElementName,
-    itemCardItemListSummaryProps,
-  );
+  return new ChatElement(ItemCardItemListSummaryElementName, itemCardItemListSummaryProps);
 }

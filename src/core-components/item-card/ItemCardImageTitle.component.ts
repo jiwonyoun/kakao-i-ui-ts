@@ -7,16 +7,8 @@ export type ItemCardImageTitlePropsType = {
   imageUrl?: string;
 };
 
-export type ItemCardImageTitleType = ChatElement<
-  typeof ItemCardImageTitleElementName,
-  ItemCardImageTitlePropsType
->;
+export type ItemCardImageTitleType = ChatElement<typeof ItemCardImageTitleElementName, ItemCardImageTitlePropsType>;
 
-export function ItemCardImageTitle(
-  itemCardImageTitleProps: ItemCardImageTitlePropsType,
-): ItemCardImageTitleType {
-  return new ChatElement(
-    ItemCardImageTitleElementName,
-    itemCardImageTitleProps,
-  );
+export function ItemCardImageTitle(itemCardImageTitleProps: ItemCardImageTitlePropsType): ItemCardImageTitleType {
+  return new ChatElement(ItemCardImageTitleElementName, itemCardImageTitleProps);
 }

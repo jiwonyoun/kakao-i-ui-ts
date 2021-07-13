@@ -5,13 +5,8 @@ export type ItemCardHeadPropsType = {
   title: string;
 };
 
-export type ItemCardHeadType = ChatElement<
-  typeof ItemCardHeadElementName,
-  ItemCardHeadPropsType
->;
+export type ItemCardHeadType = ChatElement<typeof ItemCardHeadElementName, ItemCardHeadPropsType>;
 
-export function ItemCardHead(
-  itemCardHeadProps: ItemCardHeadPropsType,
-): ItemCardHeadType {
+export function ItemCardHead(itemCardHeadProps: ItemCardHeadPropsType): ItemCardHeadType {
   return new ChatElement(ItemCardHeadElementName, itemCardHeadProps);
 }

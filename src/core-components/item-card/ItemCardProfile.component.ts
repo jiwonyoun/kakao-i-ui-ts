@@ -9,13 +9,8 @@ export type ItemCardProfilePropsType = {
   title: string;
 };
 
-export type ItemCardProfileType = ChatElement<
-  typeof ItemCardProfileElementName,
-  ItemCardImageTitlePropsType
->;
+export type ItemCardProfileType = ChatElement<typeof ItemCardProfileElementName, ItemCardImageTitlePropsType>;
 
-export function ItemCardProfile(
-  itemCardProfileProps: ItemCardProfilePropsType,
-): ItemCardProfileType {
+export function ItemCardProfile(itemCardProfileProps: ItemCardProfilePropsType): ItemCardProfileType {
   return new ChatElement(ItemCardProfileElementName, itemCardProfileProps);
 }
