@@ -10,7 +10,7 @@ export class QuickReplyElementPropsType {
   action: 'message' | 'block';
 
   @ApiProperty()
-  messageText: string;
+  messageText?: string;
 
   @ApiProperty()
   blockId?: string;
