@@ -4,22 +4,22 @@ Kakao i UI TS는 Typescript를 통해 손쉽게 [Kakao i 오픈빌더 챗봇 응
 
 Kakao i UI TS에서 지원하는 챗봇 응답 스펙은 다음과 같다.
 
-- [*] SkillResponse
-- [*] Template
-- [*] Output
-- [*] SimpleText
-- [*] SimpleImage
-- [*] BasicCard
-- [*] CommerceCard
-- [*] ItemCard
-- [*] Carousel (BasicCard, CommerceCard, ItemCard)
+- [x] SkillResponse
+- [x] Template
+- [x] Output
+- [x] SimpleText
+- [x] SimpleImage
+- [x] BasicCard
+- [x] CommerceCard
+- [x] ItemCard
+- [x] Carousel (BasicCard, CommerceCard, ItemCard)
 - [ ] ListCard
-- [*] Thumbnail
-- [*] Button
+- [x] Thumbnail
+- [x] Button
 - [ ] Link
-- [*] CarouselHeader
-- [*] Profile
-- [*] QuickReply
+- [x] CarouselHeader
+- [x] Profile
+- [x] QuickReply
 
 ## 설치
 
