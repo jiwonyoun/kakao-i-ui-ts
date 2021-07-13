@@ -12,3 +12,10 @@ export const SkillResponseElementName = 'skillResponse';
 export const SkillTemplateElementName = 'template';
 export const ThumbnailElementName = 'thumbnail';
 export const ProfileElementName = 'profile';
+
+export const ItemCardElementName = 'itemCard';
+export const ItemCardHeadElementName = 'itemCardhead';
+export const ItemCardImageTitleElementName = 'itemCardImageTitle';
+export const ItemCardProfileElementName = 'itemCardProfile';
+export const ItemCardItemListSummaryElementName = 'itemCardItemListSummary';
+export const ItemCardItemListElementName = 'itemCardItemList';

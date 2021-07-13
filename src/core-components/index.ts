@@ -11,3 +11,5 @@ export * from './SkillTemplate.component';
 export * from './Thumbnail.component';
 export * from './Profile.component';
 export * from './SkillResponse.component';
+
+export * from './item-card';

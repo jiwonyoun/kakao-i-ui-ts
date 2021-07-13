@@ -3,10 +3,17 @@ import { BasicCardType } from './BasicCard.component';
 import { CarouselType } from './Carousel.component';
 import { CommerceCardType } from './CommerceCard.component';
 import { OutputElementName } from './constants';
+import { ItemCardType } from './item-card';
 import { SimpleImageType } from './SimpleImage.component';
 import { SimpleTextType } from './SimpleText.component';
 
-export type DefaultContentType = BasicCardType | CommerceCardType | CarouselType | SimpleTextType | SimpleImageType;
+export type DefaultContentType =
+  | BasicCardType
+  | CommerceCardType
+  | CarouselType
+  | SimpleTextType
+  | SimpleImageType
+  | ItemCardType;
 
 export class OutputElementPropsType<AllowedContentType> {
   [chatElementName: string]: AllowedContentType;
