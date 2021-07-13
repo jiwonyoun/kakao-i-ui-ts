@@ -21,6 +21,7 @@ Kakao i UI TS에서 지원하는 챗봇 응답 스펙은 다음과 같다.
 - [x] Profile
 - [x] QuickReply
 
+
 ## 설치
 
 ```shell
