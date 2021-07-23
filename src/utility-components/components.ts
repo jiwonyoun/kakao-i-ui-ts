@@ -113,17 +113,3 @@ export function BaseCarouselFactory<CarouselItemsType extends ArrayOfChatElement
 export function CarouselFactory(items: DefaultCarouselItemArrayType, carouselHeader?: CarouselHeaderType) {
   return BaseCarouselFactory(items, carouselHeader);
 }
-
-/**
- * BasicCardType[]의 items를 받아 Carousel을 생성함.
- */
-export function BasicCardCarouselFactory(items: BasicCardType[]) {
-  return BaseCarouselFactory<BasicCardType[]>(items);
-}
-
-/**
- * CommerceCard[]의 items를 받아 Carousel을 생성함.
- */
-export function CommerceCardCarouselFactory(items: CommerceCardType[], carouselHeader?: CarouselHeaderType) {
-  return BaseCarouselFactory<CommerceCardType[]>(items, carouselHeader);
-}
