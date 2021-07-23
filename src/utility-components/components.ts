@@ -32,7 +32,7 @@ function notEmpty<TValue>(value: TValue | null | undefined | void): value is TVa
 
 export class SkillResponseFactoryProps<AllowedContentType> {
   chats: (OutputOrContent<AllowedContentType> | undefined | null | void)[];
-  quickReplies?: QuickReplyType[];
+  quickReplies?: (QuickReplyType | undefined | null | void)[];
 }
 
 /**
@@ -66,7 +66,7 @@ export function BaseSkilLResponseFactory<AllowedContentType extends ChatElement>
         }
         return OutputFactory<AllowedContentType>(chat as AllowedContentType);
       }),
-      quickReplies,
+      quickReplies: quickReplies ? quickReplies.filter(notEmpty) : [],
     }),
   });
 }
