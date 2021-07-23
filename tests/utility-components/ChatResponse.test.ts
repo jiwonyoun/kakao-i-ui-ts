@@ -1,10 +1,7 @@
 import {
   BasicCard,
-  BasicCardCarouselFactory,
-  BasicCardType,
   Button,
   CarouselFactory,
-  CarouselType,
   DefaultContentType,
   Output,
   OutputFactory,
