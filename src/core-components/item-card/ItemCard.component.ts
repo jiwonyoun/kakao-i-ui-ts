@@ -10,7 +10,7 @@ import { ItemCardProfileType } from './ItemCardProfile.component';
 type ItemListAlignmentType = 'left' | 'right';
 type ButtonLayoutType = 'vertical' | 'horizontal';
 export type ItemCardPropsType = {
-  thunbnail?: ThumbnailType;
+  thumbnail?: ThumbnailType;
   head?: ItemCardHeadType;
   profile?: ItemCardProfileType;
   imageTitle?: ItemCardImageTitleType;
