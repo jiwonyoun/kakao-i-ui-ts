@@ -9,7 +9,7 @@ export class ButtonElementPropsType {
   label: string;
 
   @ApiProperty()
-  action: 'webLink' | 'message' | 'block' | 'phone';
+  action: 'webLink' | 'message' | 'block' | 'phone' | 'operator';
 
   @ApiProperty()
   webLinkUrl?: string;
