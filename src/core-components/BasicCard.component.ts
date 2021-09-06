@@ -15,7 +15,7 @@ export class BasicCardElementPropsType {
   thumbnail?: ThumbnailType;
 
   @ApiProperty()
-  buttons?: ButtonType[];
+  buttons?: ButtonType[] | any[];
 }
 
 export type BasicCardType = ChatElement<typeof BasicCardElementName, BasicCardElementPropsType>;

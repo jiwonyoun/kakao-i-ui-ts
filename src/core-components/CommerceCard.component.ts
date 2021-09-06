@@ -31,7 +31,7 @@ export class CommerceCardElementPropsType {
   profile?: ProfileType;
 
   @ApiProperty()
-  buttons: ButtonType[];
+  buttons: ButtonType[] | any[];
 }
 
 export type CommerceCardType = ChatElement<typeof CommerceCardElementName, CommerceCardElementPropsType>;

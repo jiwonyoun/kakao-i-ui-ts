@@ -19,7 +19,7 @@ export type ItemCardPropsType = {
   itemList: ItemCardItemListType[];
   title?: string;
   description?: string;
-  buttons?: ButtonType[];
+  buttons?: ButtonType[] | any[];
   buttonLayout?: ButtonLayoutType;
 };
 
